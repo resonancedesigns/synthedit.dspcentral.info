@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Richard Bakos -- Sr. Developer -- @resonancedesign
+
+# THANKS
+
+    You all know who you are, or least you should ;)
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3, JS
+    Normalize.css, jQuery, Modernizr

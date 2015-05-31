@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="MMI Studios is a multimedia collective, a creative community, a net-label, and a staffing solution... Software, sample archives, tutorials, design assets, etc...">
+        <meta name="keywords" content="">
+        <meta name="author" content="Richard Bakos">
+        <!--[if IE]><link rel="shortcut icon" href="favicon.ico"><![endif]-->
+        <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+        <link rel="icon" href="favicon.png">
+
+        <title>MMI Studios - Offline</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Customized styling -->
+        <link href="css/off.css" rel="stylesheet">
+        <script>
+            // Google Analytics
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-18481540-4', 'auto');
+            ga('require', 'linkid', 'linkid.js');
+            ga('require', 'displayfeatures');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body>
+    	<img src="css/imgs/bg.png" class="bg" alt="Background Image">
+        <div id="index">
+	        <div class="container-fluid">
+	            <div class="row-fluid">
+	                <div class="col-lg-12 coming-soon">
+	                	<img class="img-responsive logo" src="css/imgs/logoHeader.png" alt="MMI Studios">
+                        <h1 class="coming-header">Version 3.0 - Coming Soon.</h1>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+        <!-- Load libraries -->
+        <script data-cfasync="false" type="text/javascript" src="//filamentapp.s3.amazonaws.com/965400d3617954c334c14b1f076895a6.js" async="async"></script>
+        <script src="libs/jquery-1.11.1.min.js"></script>
+        <script src="libs/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        	$(document).ready(function() {
+				$('.bg, .coming-header').on('webkitAnimationEnd', function(e) {
+					$(this).addClass('visible');
+				});
+				$('.bg, .coming-header').on('animationend', function(e) {
+					$(this).addClass('visible');
+				});
+				$('.logo').on('webkitAnimationEnd', function(e) {
+					$(this).addClass('visible');
+				});
+				$('.logo').on('animationend', function(e) {
+					$(this).addClass('visible');
+				});
+			});
+        </script>
+    </body>
+</html>
