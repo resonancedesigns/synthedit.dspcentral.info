@@ -1,5 +1,7 @@
+@import url("//fonts.googleapis.com/css?family=Comfortaa:400,700,300");
 @import url("boiler-plate.css");
 @import url("bootstrap.min.css");
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
 @import url("normalize.css");
+@import url("animations.css");
 @import url("custom.css");

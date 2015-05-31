@@ -1,0 +1,27 @@
+html,
+body {
+	font-family: 'Comfortaa', cursive;
+	background-color: #E2E2E2;
+}
+
+a {
+	color: #011BC0;
+}
+
+.se-brand {
+	padding: 6px;
+}
+
+.se-logo {
+	max-width: 38px;
+	display: inline-block;
+}
+
+.se-navbar {
+	background-color: #FFFFFF;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+#page-content {
+	margin-top: 60px;
+}
