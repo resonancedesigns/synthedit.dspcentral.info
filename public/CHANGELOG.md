@@ -10,6 +10,8 @@
 *   Updates to site theme
 *   Created primitive routing scheme
 *   Updated documentation
+*   Enhancements to navbar
+*   Copy/content edits for usability and SEO
 
 ### 0.0.1 (May 29th, 2015)
 
