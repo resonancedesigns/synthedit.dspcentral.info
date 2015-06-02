@@ -32,8 +32,8 @@
 
 #at-symbol,
 #d-green,
-#s-blue,
-#p-purple,
+#s-green,
+#p-green,
 #C-orange,
 #e-orange,
 #n-orange,
@@ -97,7 +97,7 @@
     animation-delay: 1s;
 }
 
-#s-blue {
+#s-green {
     color: #5e9f00;
 
     /*animation-delay*/
@@ -108,7 +108,7 @@
     animation-delay: 1.5s;
 }
 
-#p-purple {
+#p-green {
     color: #5e9f00;
 
     /*animation-delay*/

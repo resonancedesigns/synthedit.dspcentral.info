@@ -1,5 +1,11 @@
 ### HEAD
 
+### 0.0.3 (June 1st, 2015)
+
+*   Added and edited navigation items
+*   Edits to navbar styling
+*   Edit to README.md file
+
 ### 0.0.2 (May 31st, 2015)
 
 *   Updated to latest version (3.3.4) of Bootstrap
