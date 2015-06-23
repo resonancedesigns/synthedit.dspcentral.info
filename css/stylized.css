@@ -1,0 +1,172 @@
+a {
+    color: #8677C9;
+}
+
+.navbar-inverse
+.navbar-nav > li > a {
+    color: #CCC;
+}
+
+.navbar-inverse
+.navbar-nav > li > a:hover {
+    color: #FCC270;
+}
+
+#logoText {
+    color: #EEE;
+    font-size: 1.3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 48px;
+    margin-right: 20px;
+}
+
+.logoText-smaller {
+    color: #AFCAFC;
+    font-size: 0.7em;
+}
+
+.contentArea {
+    padding: 0px 30px;
+    margin-top: 70px;
+}
+
+.txt-vert-cntr {
+    line-height: 48px;
+}
+
+.members-headers {
+    color: #555555;
+}
+
+.members-headers small {
+    color: #AFCAFC;
+    text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
+}
+
+#errorMsgs {
+	height: 60px;
+}
+
+.errorMsg, 
+.feedback {  
+    color: #FF0000;
+}
+
+.feedback {
+    margin-left: 14px;
+    font-size: .8em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.errorList {
+    padding: 0;
+}
+
+.errorList li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 10px;
+    background: #CCC;
+    border: 1px solid #999;
+    border-radius: 6px;
+}
+
+#openTerms {
+}
+
+#termsContent {
+	display:none;
+}
+
+.profileBanner {
+	margin-top: -20px;
+	background-color: #CCC;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	padding: 10px 10px;
+}
+
+.profileHeaders {
+	margin: 0 0 10px 0;
+}
+
+.profileSidebar {;
+	margin-top: 10px;
+	height: 60%;
+	border-right: 1px solid #CCC;
+}
+
+.profileContent {
+	padding-top: 10px;
+}
+
+#editProfileTabs {
+    margin-top: 20px;
+}
+
+.forgot {
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+}
+
+.copyright {
+    margin-right: 20px;
+    color: #FFF;
+}
+
+#toTop {
+    display: none;
+}
+
+/* Menu Items */
+#index li.index, 
+#login li.login, 
+#logout li.logout, 
+#profile li.profile, 
+#register li.register, 
+#update li.update, 
+#userpass li.userpass,
+#login-footer li.login-footer,
+#logout-footer li.logout-footer,
+#profile-footer li.profile-footer,
+#register-footer li.register-footer,
+#update-footer li.update-footer, 
+#userpass-footer li.userpass-footer {
+	background: #000;
+}
+
+#index li.index, 
+#login li.login, 
+#logout li.logout, 
+#profile li.profile, 
+#register li.register, 
+#update li.update, 
+#userpass li.userpass {
+	padding-top: 24px;
+	height: 50px;
+
+}
+
+#index li.index a, 
+#login li.login a, 
+#logout li.logout a, 
+#profile li.profile a, 
+#register li.register a, 
+#update li.update a, 
+#userpass li.userpass a,
+#login-footer li.login-footer a,
+#logout-footer li.logout-footer a,
+#profile-footer li.profile-footer a,
+#register-footer li.register-footer a,
+#update-footer li.update-footer a, 
+#userpass-footer li.userpass-footer a {
+	color: #FCC270;
+	background: #000;
+}
+
+/* Ajaxify corrections */
+.document-meta {
+	height: 0px;
+}
