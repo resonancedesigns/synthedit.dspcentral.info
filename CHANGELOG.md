@@ -1,5 +1,10 @@
 ### HEAD
 
+### 0.0.5 (July 10th, 2015)
+*   Modified security redirects
+*   Edited footer styling
+*   Integrating file upload functionality
+
 ### 0.0.4 (June 23rd, 2015)
 
 *   Integrated Resonance Design Member System V1 component for user registration, authentication and basic profile pages

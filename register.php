@@ -127,9 +127,11 @@ if(Input::exists()) {
     </head>
     <body>
         <div id="register">
-        	<?php include_once INC_ROOT . '/includes/layout/signed_out_nav.anim.php'; ?>
-	        <?php include_once INC_ROOT . '/includes/content/general/user_register.php'; ?>
-	        <?php include_once INC_ROOT . '/includes/layout/signed_out_footer.anim.php'; ?>
+        	<?php 
+            include_once INC_ROOT . '/includes/layout/signed_out_nav.static.php';
+            include_once INC_ROOT . '/includes/content/general/user_register.php';
+            include_once INC_ROOT . '/includes/layout/footer.php';
+            ?>
 	    </div>
         <!-- Load libraries -->
         <?php include_once INC_ROOT . '/includes/content/data/javascripts.php'; ?>

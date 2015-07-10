@@ -29,7 +29,7 @@ $user = new User($username);
     </head>
     <body>
        	<div id="update">
-       		<?php include_once INC_ROOT . '/includes/layout/signed_in_nav.anim.php'; ?>
+       		<?php include_once INC_ROOT . '/includes/layout/signed_in_nav.static.php'; ?>
 	        <div id="content-swapper" class="container-fluid">
 	            <div class="row-fluid">
 	            	<div class="col-lg-12">
@@ -38,7 +38,7 @@ $user = new User($username);
 	                </div>
 	            </div>
 	        </div>
-	        <?php include_once INC_ROOT . '/includes/layout/signed_in_footer.anim.php'; ?>
+	        <?php include_once INC_ROOT . '/includes/layout/footer.php'; ?>
 	    </div>
         <!-- Load libraries -->
         <?php include_once INC_ROOT . '/includes/content/data/javascripts.php'; ?>

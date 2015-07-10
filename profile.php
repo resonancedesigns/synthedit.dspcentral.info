@@ -25,13 +25,13 @@ if(!$username = Input::get('user')) {
         <![endif]-->
         <?php
         // Create the inline styling for the custom profile banner. 
-    	$userBanner = "
-			<style type='text/css'>
+    	$userBanner = '
+			<style type="text/css">
 				.profileBanner {
-					background-image: url('users/" . $user->data()->username . "/imgs/" . $user->data()->banner_pic . "');
+					background-image: url("users/' . $user->data()->username . '/imgs/' . $user->data()->banner_pic . '");
 				}
 	        </style>
-    	";
+    	';
     	// Check if the user has uploaded a custom profile banner image.
     	if(!empty($user->data()->banner_pic)) {
     		// If they have, insert the inline styling.
@@ -42,9 +42,11 @@ if(!$username = Input::get('user')) {
     </head>
     <body>
        	<div id="profile">
-       		<?php include_once INC_ROOT . '/includes/layout/signed_in_nav.anim.php'; ?>
-	        <?php include_once INC_ROOT . '/includes/content/general/user_profile.php'; ?>
-	        <?php include_once INC_ROOT . '/includes/layout/signed_in_footer.anim.php'; ?>
+       		<?php 
+            include_once INC_ROOT . '/includes/layout/signed_in_nav.static.php';
+            include_once INC_ROOT . '/includes/content/general/user_profile.php';
+	        include_once INC_ROOT . '/includes/layout/footer.php';
+            ?>
 	    </div>
         <!-- Load libraries -->
         <?php include_once INC_ROOT . '/includes/content/data/javascripts.php'; ?>

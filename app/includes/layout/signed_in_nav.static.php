@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <div class="navbar-brand se-brand">
-                <a href="http://www.synthedit.com" target="_blank"><img class="img-responsive se-logo" title="SynthEdit" alt="SynthEdit" src="imgs/se_logo.png"></a><span id="at-symbol" class="logo letters"> @ <a href="http://dspcentral.info" target="_blank" title="dspCentral.info"><span id="d-green" class="logo letters">d</span><span id="s-green" class="logo letters">s</span><span id="p-green" class="logo letters">p</span><!-- <span id="C-orange" class="logo letters">C</span> --><img id="C-orange" class="img-responsive logo" alt="C" src="imgs/icon.png" alt="dspCentral.info"><span id="e-orange" class="logo letters">e</span><span id="n-orange" class="logo letters">n</span><span id="t-orange" class="logo letters">t</span><span id="r-orange" class="logo letters">r</span><span id="a-orange" class="logo letters">a</span><span id="l-orange" class="logo letters">l</span><span id="dot-pink" class="logo letters">.</span><span id="i-pink" class="logo letters">i</span><span id="n-pink" class="logo letters">n</span><span id="f-pink" class="logo letters">f</span><span id="o-pink" class="logo letters">o</span></a>
+                <a href="http://www.synthedit.com" target="_blank"><img class="img-responsive se-logo" title="SynthEdit" alt="SynthEdit" src="imgs/se_logo.png"></a><span class="letters black"> @ <a href="http://dspcentral.info" target="_blank" title="dspCentral.info"><span class="letters green">dsp<!-- <span id="C-orange" class="logo letters">C</span> --><img class="img-responsive C-image" alt="C" src="imgs/icon.png" alt="dspCentral.info"><span class="letters orange">entral</span><span class="letters pink">.info</span></a>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Interact <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="dropdown-menu text-right" role="menu">
                         <li id="content" class="text-right"><a href="content.php">Submit Content</a></li>
                         <li id="profile" class="text-right"><a href="profile.php?user=<?php echo escape($user->data()->username); ?>">View Profile</a></li>
                         <li id="update" class="text-right"><a href="update.php">Update Profile</a></li>

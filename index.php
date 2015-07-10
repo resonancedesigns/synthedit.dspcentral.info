@@ -40,14 +40,12 @@ require_once 'app/core/init.php';
 	        if($user->isLoggedIn()) {        
 	            // If user is signed in, display the following HTML -->
 	            include_once INC_ROOT . '/includes/layout/signed_in_nav.anim.php';
-	            include_once INC_ROOT . '/includes/content/general/home.php';
-	            include_once INC_ROOT . '/includes/layout/signed_in_footer.anim.php';
 	        } else { 
 	            // If user is not signed in, display the following HTML
 	            include_once INC_ROOT . '/includes/layout/signed_out_nav.anim.php';
-	            include_once INC_ROOT . '/includes/content/general/home.php';
-	            include_once INC_ROOT . '/includes/layout/signed_out_footer.anim.php';
 	        }
+	        include_once INC_ROOT . '/includes/content/general/home.php';
+	        include_once INC_ROOT . '/includes/layout/footer.php';
 	        ?>
 	    </div>
         <!-- Load libraries -->

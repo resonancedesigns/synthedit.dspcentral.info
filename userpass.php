@@ -67,9 +67,11 @@ if(Input::exists()) {
     </head>
     <body>
        	<div id="userpass">
-       		<?php include_once INC_ROOT . '/includes/layout/signed_in_nav.anim.php'; ?>
-	        <?php include_once INC_ROOT . '/includes/content/general/update_pass.php'; ?>
-	        <?php include_once INC_ROOT . '/includes/layout/signed_in_footer.anim.php'; ?>
+       		<?php
+       		include_once INC_ROOT . '/includes/layout/signed_in_nav.static.php';
+       		include_once INC_ROOT . '/includes/content/general/update_pass.php';
+       		include_once INC_ROOT . '/includes/layout/footer.php';
+       		?>
 	    </div>
         <!-- Load libraries -->
         <?php include_once INC_ROOT . '/includes/content/data/javascripts.php'; ?>
