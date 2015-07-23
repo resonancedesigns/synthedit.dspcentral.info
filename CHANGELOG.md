@@ -1,5 +1,8 @@
 ### HEAD
 
+### 0.0.7 (July 23rd, 2015)
+*   Made 'File' class more eloquent by segmenting it into more functions
+
 ### 0.0.6 (July 22nd, 2015)
 *   Removed some depricated and redundant files
 *   Created 'File' class
