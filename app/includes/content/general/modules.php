@@ -1,61 +1,77 @@
 <div id="content-swapper" class="container-fluid">
     <div class="row-fluid">
         <div class="col-lg-12">
-            <form action="app/parsers/upload_module.php" method="post" enctype="multipart/form-data" id="upload_form" name="form" class="form-horizontal">
-                <fieldset>
-                    <legend>Add Module</legend>
-                    <div class="form-group">
-                        <label for="module-file" class="col-sm-2 control-label">Module File</label>
-                        <div class="col-sm-10">
-                            <input type="file" id="module-file" name="module-file" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="module-title" class="col-sm-2 control-label">Title</label>
-                        <div class="col-sm-10">
-                            <input type="text" name="fileTitle" id="fileTitle" placeholder="Title" class="form-control" value="<?php echo $fileTitle ?>">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="module-description" class="col-sm-2 control-label">Description</label>
-                        <div class="col-sm-10">
-                            <textarea class="form-control" name="fileDescription" id="fileDescription" rows="3" placeholder="Description"><?php echo $fileDescription ?></textarea>
-                        </div>
-                    </div>
-                    <!-- <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Private
-                                </label>
+            <h1 id="modules">Modules<sub class="sub-button">
+                <?php if($user->isLoggedIn()): ?>
+                    <div id="addContainer"><button id="addBtn" type="submit" name="addBtn" class="btn btn-default" href="#">Add One</button></div>
+                <?php else: ?>
+                    <sub>You must <a href="http://dspcentral.synthedit/sign-in.php">sign in</a> to add one. Need an account? <a href="http://dspcentral.synthedit/register.php">Register here</a>.</sub>
+                <?php endif; ?>
+            </sub></h1>
+            <?php if($user->isLoggedIn()): ?>
+                <!-- Start upload form -->
+                <form target="upload-frame" id="moduleForm" name="moduleForm" class="form-horizontal" role="form" action="app/parsers/create_module.php" method="post" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Add Module</legend>
+                        <div class="form-group field hide-me">
+                            <label for="title" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="title" id="title" class="form-control" placeholder="Title" value="" autocomplete="off">
                             </div>
                         </div>
-                    </div> 
-                    <input type="hidden" name="userID" id="userID" value="<?php //echo $userID ?>">
-                    <input type="hidden" name="userName" id="userName" value="<?php //echo $userName ?>" >
-                    <input type="hidden" name="name" id="name" value="<?php //echo $name ?>" >
-                    <input type="hidden" name="pvt" id="pvt" value="0"> -->
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <input type="button" id="submit" name="submit" class="btn btn-default" value="Upload" onclick="uploadFile()">
+                        <div class="form-group field hide-me">
+                            <label for="description" class="col-sm-2 control-label">Description</label>
+                            <div class="col-sm-10">
+                                <textarea name="description" id="description" rows="5" form="moduleForm" class="form-control" placeholder="Description"></textarea>
+                            </div>
                         </div>
-                    </div>
-                </fieldset>
-            </form>
-                    
-
-                    <div id="progress-display">
-                        <div class="bar">
-                            <span class="bar-fill" id="progressBar"><span class="bar-fill-text" id="pt"></span></span>
+                        <div class="form-group field hide-me">
+                            <label for="file" class="col-sm-2 control-label">File</label>
+                            <div class="col-sm-10">
+                                <input type="file" name="module-file" id="module-file">
+                            </div>
                         </div>
-                        <div id="uploads" class="uploads">
-                            <h3 id="status"></h3>
-                            <p id="loaded_n_total"></p>
+                        <input type="hidden" name="u_id" id="u_id" value="<?php echo $user->data()->id ?>">
+                        <input type="hidden" name="username" id="username" value="<?php echo $user->data()->username ?>">
+                        <input type="hidden" name="name" id="name" value="<?php echo $user->data()->name ?>">
+                        <input type="hidden" name="pvt" id="pvt" value="0">
+                        <div class="form-group hide-me">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button id="uploadBtn" type="submit" name="uploadBtn" class="btn btn-default" onclick="uploadFile()">Add</button>
+                                <button id="cancelBtn" type="submit" name="cancelBtn" class="btn btn-default">Cancel</button>
+                            </div>
                         </div>
-                    </div>
-                <!-- <progress id="progressBar" value="0" max="100" class="progress-bar"></progress> -->
-
-
+                        <div id="progress-display" class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="bar">
+                                    <span class="bar-fill" id="progressBar"><span id="status"></span></span>
+                                </div>
+                                <div id="uploads" class="uploads">
+                                    
+                                    <p id="loaded_n_total"></p>
+                                </div>
+                                <iframe class="embed-responsive-item" name="upload-frame" id="upload-frame" src="app/parsers/create_module.php" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <!-- End upload form -->
+            <?php endif; ?>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div id="pagination-top" class="col-lg-12">
+            <?php $modules->pageInation('modules'); ?>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div id="module-list" class="col-lg-12">
+            <?php $modules->fileList('modules'); ?>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div id="pagination-bottom" class="col-lg-12">
+            <?php $modules->pageInation('modules'); ?>
         </div>
     </div>
 </div>
