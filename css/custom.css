@@ -8,6 +8,15 @@ a {
 	color: #011BC0;
 }
 
+fieldset {
+	margin-bottom: 20px;
+}
+
+legend {
+	margin-bottom: 0;
+	width: inherit;
+}
+
 .se-brand {
 	padding: 6px;
 }
@@ -87,4 +96,99 @@ a {
 .C-image {
 	max-width: 32px;
     display: inline-block;
+}
+
+/* Progress Display */
+#progress-display {
+	padding: 0;
+}
+
+.bar {
+	width: 100%;
+	background-color: #CCCCCC;
+	padding: 3px;
+	margin-bottom: 10px;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+	border-radius: 3px;
+	box-sizing: border-box;
+}
+
+.bar-fill {
+	height: 20px;
+	display: block;
+	background-color: cornflowerblue;
+	width: 0;
+	border-radius: 3px;
+	transition: width 0.8s ease;
+}
+
+.bar-fill-text {
+	color: #FFFFFF;
+	padding: 3px;
+}
+
+#status {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+#status a {
+	color: #ff3e00;
+}
+
+#moduleForm {
+	display: none;
+}
+
+#upload-frame {
+	max-height: 250px;
+	width: 100%;
+	opacity: 0;
+	display: none;
+}
+
+h1.upload-frame {
+	margin-top: 0;
+}
+
+h1.upload-frame sub {
+	margin-left: 1em;
+	bottom: 0;
+	color: #ff3e00;
+}
+
+.sub-button {
+	bottom: .3em;
+	padding-left: 1em;
+}
+
+h4.upload-frame {
+	margin: 0.2em;
+}
+
+h4.upload-frame sub {
+	bottom: 0;
+    color: #5e9f00;
+    font-size: 90%;
+}
+
+p.upload-frame {
+    color: #5e9f00;
+}
+
+h1#modules {
+	margin-bottom: 20px;
+}
+
+#addContainer {
+	display: inline-block;
+}
+
+#pagination-bottom {
+	margin-bottom: 68px;
+}
+
+.selected {
+	font-weight: bold;
 }

@@ -47,7 +47,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Interact <span class="caret"></span></a>
                     <ul class="dropdown-menu text-right" role="menu">
-                        <li id="content" class="text-right"><a href="content.php">Submit Content</a></li>
+                        <li id="content" class="text-right"><a href="submit-content.php">Submit Content</a></li>
                         <li id="profile" class="text-right"><a href="profile.php?user=<?php echo escape($user->data()->username); ?>">View Profile</a></li>
                         <li id="update" class="text-right"><a href="update.php">Update Profile</a></li>
                         <li id="userpass" class="text-right"><a href="userpass.php">Change Password</a></li>

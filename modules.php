@@ -1,13 +1,7 @@
 <?php
-error_reporting(E_ALL & ~E_NOTICE);
+// Initialize the application
 require_once 'app/core/init.php';
-
-$user = new User($username);
-if(!$user->exists()) {
-	Redirect::to(404);
-} else {
-	$data = $user->data();
-}
+$modules = new File();
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -28,19 +22,22 @@ if(!$user->exists()) {
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-       	<div id="update">
-       		<?php include_once INC_ROOT . '/includes/layout/signed_in_nav.static.php'; ?>
-	        <div id="content-swapper" class="container-fluid">
-	            <div class="row-fluid">
-	            	<div class="col-lg-12">
-	                    <h2 class="members-headers">Upload Complete<small>Your profile picture has been updated... .. .</small></h2>
-	                    <img src="users/<?php echo escape($data->username) ?>/imgs/<?php echo escape($data->profile_pic) ?>">
-	                </div>
-	            </div>
-	        </div>
-	        <?php include_once INC_ROOT . '/includes/layout/footer.php'; ?>
-	    </div>
+        <div id="modules">
+            <?php
+            $user = new User();
+            $data = $user->data();
+            if($user->isLoggedIn()) {
+                // If user is signed in, display the following HTML -->
+                include_once INC_ROOT . '/includes/layout/signed_in_nav.static.php';
+            } else { 
+                // If user is not signed in, display the following HTML
+                include_once INC_ROOT . '/includes/layout/signed_out_nav.static.php';
+            } 
+            ?>
+            <?php include_once INC_ROOT . '/includes/content/general/modules.php'; ?>
+            <?php include_once INC_ROOT . '/includes/layout/footer.php'; ?>
+        </div>
         <!-- Load libraries -->
         <?php include_once INC_ROOT . '/includes/content/data/javascripts.php'; ?>
-	</body>
+    </body>
 </html>

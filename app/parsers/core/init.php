@@ -6,8 +6,8 @@ ini_set('display_errors', 'On');
 
 define('INC_ROOT', dirname(__DIR__));
 
-define('GUSER', 'dspcentral.info@gmail.com'); // GMail username
-define('GPWD', 'Mungching1!'); // GMail password
+define('GUSER', 'youremail@gmail.com'); // GMail username
+define('GPWD', 'yourpassword'); // GMail password
 
 $GLOBALS['config'] = array (
     'mysql' => array (

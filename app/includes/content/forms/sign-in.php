@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div id="page-content" class="col-lg-12">
-            <h2 class="members-headers">Log In <small>Please log in to continue... .. .</small></h2>
+            <h2 class="members-headers">Sign In <small>Please log in to continue... .. .</small></h2>
             <!-- Display incorrect login error if one exists -->
             <?php print "<h4 class='errorMsg'>$loginFailDisplay</h4>"; ?>
             <!-- Display validation errors if any exist -->

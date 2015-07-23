@@ -1,5 +1,16 @@
 ### HEAD
 
+### 0.0.6 (July 22nd, 2015)
+*   Removed some depricated and redundant files
+*   Created 'File' class
+*   Created modules page/view
+*   Created file database entry functionality
+*   Revised file upload to work with database entry form
+*   Now handling file upload request via Ajax
+*   Created progress bar and details display for file upload/database creation.
+*   Added watch.js library
+*   Made jQuery UX improvements
+
 ### 0.0.5 (July 10th, 2015)
 *   Modified security redirects
 *   Edited footer styling
