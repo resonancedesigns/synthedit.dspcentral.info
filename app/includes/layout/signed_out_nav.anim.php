@@ -24,6 +24,7 @@
                         <li><a href="#">Prefabs</a></li>
                         <li><a href="#">Graphics</a></li>
                         <li><a href="#">Tools</a></li>
+                        <li><a href="#">Docs</a></li>
                         <li><a href="#">Misc</a></li>
                     </ul>
                 </li>

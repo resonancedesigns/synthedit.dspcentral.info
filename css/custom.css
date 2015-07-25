@@ -8,13 +8,14 @@ a {
 	color: #011BC0;
 }
 
-fieldset {
-	margin-bottom: 20px;
-}
-
 legend {
 	margin-bottom: 0;
 	width: inherit;
+}
+
+.table > thead > tr > th {
+    border-bottom: 2px solid #aaa;
+    vertical-align: bottom;
 }
 
 .se-brand {
@@ -191,4 +192,121 @@ h1#modules {
 
 .selected {
 	font-weight: bold;
+}
+
+div#pagination-bottom ul.pagination,
+div#pagination-top ul.pagination,
+div#module-list table.table,
+div#modules ol.breadcrumb {
+	margin-bottom: 0;
+}
+
+form#moduleForm fieldset {
+	margin-top: 20px;
+}
+
+.fileDescription {
+	display: none;
+}
+
+@-webkit-keyframes descAnim {
+	0% {
+        opacity: 0;
+        /* transform: translate(0, -100%); */
+	}
+	100% {
+        opacity: 1;
+        /* transform: translate(0, 0); */
+	}
+}
+
+@keyframes descAnim {
+	0% {
+        opacity: 0;
+        /* transform: translate(0, -100%); */
+	}
+	100% {
+        opacity: 1;
+        /* transform: translate(0, 0); */
+	}
+}
+
+.show-desc {
+	display: table-row;
+	-webkit-animation-name: descAnim;
+	-moz-animation-name: descAnim;
+	-ms-animation-name: descAnim;
+	-o-animation-name: descAnim;
+	animation-name: descAnim;
+	-webkit-animation-duration: 1s;
+	-moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -o-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in;
+	-moz-animation-timing-function: ease-in;
+    -ms-animation-timing-function: ease-in;
+    -o-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.fileDescription td {
+	padding: 0 !important;
+}
+
+.show-desc div {
+    background-color: #ccc;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.show-desc:hover {
+	background-color: transparent !important;
+}
+
+#module-list h4 {
+	margin-top: 0;
+}
+
+#module-list h4 sub {
+	bottom: 0;
+}
+
+.file-item {
+	cursor: pointer;
+}
+
+tr.tab-desc hr {
+	border-color: #555;
+}
+
+#toTop {
+	display: none;
+}
+
+.user-menu {
+	padding: 6px !important;
+}
+
+.user-icon {
+	max-width: 38px !important;
+	padding: 0;
+}
+
+.res-label {
+	text-align: right;
+	line-height: 20px;
 }

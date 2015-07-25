@@ -1,6 +1,8 @@
 <?php
 // Initialize the application
 require_once 'app/core/init.php';
+$user = new User();
+$data = $user->data();
 $modules = new File();
 ?>
 <!doctype html>
@@ -20,12 +22,16 @@ $modules = new File();
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <script>
+            function _(el) {
+                return document.getElementById(el);
+            }
+        </script>
     </head>
     <body>
         <div id="modules">
             <?php
-            $user = new User();
-            $data = $user->data();
+            
             if($user->isLoggedIn()) {
                 // If user is signed in, display the following HTML -->
                 include_once INC_ROOT . '/includes/layout/signed_in_nav.static.php';

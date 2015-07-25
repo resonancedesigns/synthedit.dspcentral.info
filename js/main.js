@@ -87,9 +87,9 @@ $('#openTerms').click(function () {
 // Back To Top button animation
 $(window).scroll(function () {
     if ($(this).scrollTop()) {
-        $('#toTop').fadeIn();
+        $('#toTop').fadeIn().css("display","inline-block");
     } else {
-        $('#toTop').fadeOut();
+        $('#toTop').fadeOut().css("display","inline-block");
     }
 });
 

@@ -12,9 +12,7 @@ class File {
 	}
 
 	public function queryConstructor($where) {
-		// Make database connection
 		$db = $this->connectApp();
-		// Query
 		$files = $db->prepare("SELECT * FROM files WHERE category = '{$where}' LIMIT {$this->start}, {$this->perP}");
 		$files->execute();
 		$files = $files->fetchAll(PDO::FETCH_ASSOC);
@@ -22,23 +20,37 @@ class File {
 	}
 
 	public function fileList($where){
-		// Make database connection
 		$files = $this->queryConstructor($where);
 		$fileList = NULL;
 		foreach ($files as $file) {
 			$fileList .= '
-				<div>
-					<p><a href="files/modules/' . $file['file'] . '">' . $file['username'] . ' - ' . $file['title'] . ' - ' . $file['created_at'] . ' - ' . $file['file'] . '</a></p>
-				</div>
+				<tr onclick="showDesc' . $file['id'] . '()" class="file-item">
+					<td>' . $file['title'] . '</td>
+					<td><a href="files/modules/' . $file['file'] . '">' . $file['file'] . '</a></td>
+					<td>' . $file['username'] . '</td>
+					<td>' . $file['created_at'] . '</td>
+				</tr>
+				<tr id="desc' . $file['id'] . '" class="fileDescription tab-desc">
+					<td colspan="4">
+						<div>
+							<h4>' . $file['title'] . '<sub class="pull-right"><a href="files/modules/' . $file['file'] . '" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Download</a></sub></h4>
+							<p>' . $file['description'] . '</p>
+							<hr>
+						</div>
+					</td>
+				</tr>
+				<script>
+					function showDesc' . $file['id'] . '() {
+						_("desc' . $file['id'] . '").classList.toggle("show-desc");
+					}
+				</script>
 			';
 		};
         print $fileList;
 	}
 
 	public function pageInation($where) {
-		// Make database connection
 		$db = $this->connectApp();
-		// Query
 		$files = $db->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM files WHERE category = '{$where}' LIMIT {$this->start}, {$this->perP}");
 		$files->execute();
 		$files = $files->fetchAll(PDO::FETCH_ASSOC);
@@ -48,12 +60,12 @@ class File {
 		$pageInation = NULL;
 		for ($x = 1; $x <= $pages; $x++) {
 			if($this->p === $x) { 
-				$selected = " class='selected'";
+				$selected = " class='active'";
 			} else {
 				$selected = "";
 			};
 			$pageInation .= '
-				<a href="?page=' . $x . '&per-page=' . $this->perP . '"' . $selected . '>' . $x . '</a>
+				<li' . $selected . '><a href="?page=' . $x . '&per-page=' . $this->perP . '">' . $x . '</a></li>
 			';
 		};
 		print $pageInation;

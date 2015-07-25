@@ -3,11 +3,17 @@
         <div class="col-lg-12">
             <h1 id="modules">Modules<sub class="sub-button">
                 <?php if($user->isLoggedIn()): ?>
-                    <div id="addContainer"><button id="addBtn" type="submit" name="addBtn" class="btn btn-default" href="#">Add One</button></div>
+                    <div id="addContainer"><button id="addBtn" type="submit" name="addBtn" class="btn btn-default" href="#"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add One</button></div>
                 <?php else: ?>
                     <sub>You must <a href="http://dspcentral.synthedit/sign-in.php">sign in</a> to add one. Need an account? <a href="http://dspcentral.synthedit/register.php">Register here</a>.</sub>
                 <?php endif; ?>
             </sub></h1>
+            <!-- TODO: Make breadcrumbs dynamic -->
+            <ol class="breadcrumb">
+                <li><a href="#">SynthEdit@dspCentral.info</a></li>
+                <li><a href="#">Resources</a></li>
+                <li class="active">Modules</li>
+            </ol>
             <?php if($user->isLoggedIn()): ?>
                 <!-- Start upload form -->
                 <form target="upload-frame" id="moduleForm" name="moduleForm" class="form-horizontal" role="form" action="app/parsers/create_module.php" method="post" enctype="multipart/form-data">
@@ -37,8 +43,8 @@
                         <input type="hidden" name="pvt" id="pvt" value="0">
                         <div class="form-group hide-me">
                             <div class="col-sm-offset-2 col-sm-10">
-                                <button id="uploadBtn" type="submit" name="uploadBtn" class="btn btn-default" onclick="uploadFile()">Add</button>
-                                <button id="cancelBtn" type="submit" name="cancelBtn" class="btn btn-default">Cancel</button>
+                                <button id="uploadBtn" type="submit" name="uploadBtn" class="btn btn-default" onclick="uploadFile()"><span class="glyphicon glyphicon-open" aria-hidden="true"></span> Upload</button>
+                                <button id="cancelBtn" type="submit" name="cancelBtn" class="btn btn-default"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Cancel</button>
                             </div>
                         </div>
                         <div id="progress-display" class="form-group">
@@ -61,17 +67,53 @@
     </div>
     <div class="row-fluid">
         <div id="pagination-top" class="col-lg-12">
-            <?php $modules->pageInation('modules'); ?>
+            <nav>
+                <ul class="pagination pagination-sm">
+                    <?php $modules->pageInation('modules'); ?>
+                </ul>
+                <div class="col-sm-3 pull-right">
+                    <form action="" class="form-horizontal" style="margin-top: 20px;">
+                        <div class="form-group field">
+                            <label for="resNum" class="col-sm-9 res-label text-right">Results Per Page:</label>
+                            <select class="pull-right" name="resNum" onchange="window.location.href= this.form.resNum.options[this.form.resNum.selectedIndex].value">
+                                <option value="modules.php?page=1&amp;per-page=10">10</option>
+                                <option value="modules.php?page=1&amp;per-page=20">20</option>
+                                <option value="modules.php?page=1&amp;per-page=30">30</option>
+                                <option value="modules.php?page=1&amp;per-page=40">40</option>
+                                <option value="modules.php?page=1&amp;per-page=50">50</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </nav>
         </div>
     </div>
     <div class="row-fluid">
         <div id="module-list" class="col-lg-12">
-            <?php $modules->fileList('modules'); ?>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>File</th>
+                            <th>User</th>
+                            <th>Creation</th>
+                        </tr>
+                        <tbody>
+                            <?php $modules->fileList('modules'); ?>
+                        </tbody>
+                    </thead>
+                </table>
+            </div>
         </div>
     </div>
     <div class="row-fluid">
         <div id="pagination-bottom" class="col-lg-12">
-            <?php $modules->pageInation('modules'); ?>
+            <nav>
+                <ul class="pagination pagination-sm">
+                    <?php $modules->pageInation('modules'); ?>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>

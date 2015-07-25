@@ -20,10 +20,11 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Resources <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Graphics</a></li>
                         <li><a href="#">Modules</a></li>
                         <li><a href="#">Prefabs</a></li>
-                        <li><a href="#">Graphics</a></li>
                         <li><a href="#">Tools</a></li>
+                        <li><a href="#">Docs</a></li>
                         <li><a href="#">Misc</a></li>
                     </ul>
                 </li>
@@ -45,15 +46,17 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Interact <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li id="content" class="text-right"><a href="content.php">Submit Content</a></li>
-                        <li id="profile" class="text-right"><a href="profile.php?user=<?php echo escape($user->data()->username); ?>">View Profile</a></li>
-                        <li id="update" class="text-right"><a href="update.php">Update Profile</a></li>
-                        <li id="userpass" class="text-right"><a href="userpass.php">Change Password</a></li>
+                    <a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <img class="profilePic user-icon" src="users/<?php echo escape($data->username) ?>/imgs/<?php echo escape($data->profile_pic) ?>">
+                    </a>
+                    <ul class="dropdown-menu text-right" role="menu">
+                        <li id="content" class="text-right"><a href="submit-content.php">Submit Content <span class="glyphicon glyphicon-open" aria-hidden="true"></span></a></li>
+                        <li id="profile" class="text-right"><a href="profile.php?user=<?php echo escape($user->data()->username); ?>">View Profile <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                        <li id="update" class="text-right"><a href="update.php">Update Profile <span class="glyphicon glyphicon-pencil" aria-hidden="true"></a></li>
+                        <li id="userpass" class="text-right"><a href="userpass.php">Change Password <span class="glyphicon glyphicon-cog" aria-hidden="true"></span></span></a></li>
+                        <li id="signout" class="text-right"><a href="sign-out.php">Sign Out <span class="glyphicon glyphicon-off" aria-hidden="true"></span></a></li>
                     </ul>
                 </li>
-                <li><a href="sign-out.php">Sign Out</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

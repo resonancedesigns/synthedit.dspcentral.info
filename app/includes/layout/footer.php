@@ -31,7 +31,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right se-footer">
                 <li><a href="http://www.resonance-designs.com" target="_blank"><span class="se-subtext">Designed &amp; Developed by</span> Resonance Designs</a></li>
-                <li><a href="#">Back To Top</a></li>
+                <li><a href="#" id="toTop"><span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span></a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
