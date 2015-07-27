@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../css/se-dspcentral.css">
+<link rel="stylesheet" href="../../public/css/se-dspcentral.css">
 
 <?php
 require_once ('../core/init.php');
@@ -9,7 +9,26 @@ $username = $user->data()->username;
 
 // Set the file extensions allowed
 $allowed = [
+	'se1',
 	'sem',
+	'gif',
+	'jpg',
+	'png',
+	'bmp',
+	'psd',
+	'pdf',
+	'vst',
+	'dll',
+	'fxp',
+	'fst',
+	'fxb',
+	'mp3',
+	'mp4',
+	'ogg',
+	'flac',
+	'wav',
+	'aif',
+	'aiff',
 	'zip',
 	'rar',
 	'7z',
@@ -18,18 +37,19 @@ $allowed = [
 ];
 
 // Check if a file has been selected
-if (!empty($_FILES['module-file']['name'])) {
+if (!empty($_FILES['upload-file']['name'])) {
 	// If it has, gather the form data and prepare it for the database query
 	$u_id = $_POST['u_id'];
 	$username = $_POST['username'];
 	$name = $_POST['name'];
 	$title = $_POST['title'];
 	$description = $_POST['description'];
+	$category = $_POST['category'];
 	$pvt = $_POST['pvt'];
-	$file_name = $_FILES['module-file']['name'];
-	$temp_name = $_FILES['module-file']['tmp_name'];
-	$filetype = $_FILES['module-file']['type'];
-	$filename = $_FILES['module-file']['name'];
+	$file_name = $_FILES['upload-file']['name'];
+	$temp_name = $_FILES['upload-file']['tmp_name'];
+	$filetype = $_FILES['upload-file']['type'];
+	$filename = $_FILES['upload-file']['name'];
 	// Get the file extension/type
 	$ext = explode('.', $filename);
 	$ext = strtolower(end($ext));
@@ -47,12 +67,12 @@ if (!empty($_FILES['module-file']['name'])) {
 	// Security: Check if the file extension is allowed
 	if(in_array($ext, $allowed)) {
 		// If it is, insert database record for the file and send message to the user
-		$query_create = mysqli_query($connectMe, "INSERT INTO files (u_id, username, name, file, title, description, category, created_at, pvt) VALUES('$u_id','$username','$name','$filename','$title','$description','modules',date('Y-m-d H:i:s'),'$pvt')") or die (mysqli_error($connectMe));
-		$uploadMsg = "Module uploaded successfully! =) <a id='addAnother' type='submit' name='addAnother' class='btn btn-default' href='../../upload.php' target='_parent'>Add Another</a>";
+		$query_create = mysqli_query($connectMe, "INSERT INTO files (u_id, username, name, file, title, description, category, created_at, pvt) VALUES('$u_id','$username','$name','$filename','$title','$description','$category',date('Y-m-d H:i:s'),'$pvt')") or die (mysqli_error($connectMe));
+		$uploadMsg = "$category uploaded successfully! =) <a id='addAnother' type='submit' name='addAnother' class='btn btn-default' href='../../upload.php' target='_parent'>Add Another</a>";
 		$fileDetails = "
 			<div class='col-sm-6'><h4 class='upload-frame'>Title: <sub>$title</sub></h4></div>
 			<div class='col-sm-6'><h4 class='upload-frame'>User: <sub>$username</sub></h4></div>
-			<div class='col-sm-6'><h4 class='upload-frame'>Category: <sub>Modules</sub></h4></div>
+			<div class='col-sm-6'><h4 class='upload-frame'>Category: <sub>$category</sub></h4></div>
 			<div class='col-sm-6'><h4 class='upload-frame'>Private: <sub>$pvt</sub></h4></div>
 			<div class='col-sm-2'><h4 class='upload-frame'>Description:</h4></div>
 			<div class='col-sm-10'><p class='upload-frame'>$description</p></div>

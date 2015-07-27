@@ -1,7 +1,7 @@
 <div id="content-swapper" class="container-fluid">
     <div class="row-fluid">
         <div class="col-lg-12">
-            <h1 id="modules">Modules<sub class="sub-button">
+            <h1 class="res-headers">Modules<sub class="sub-button">
                 <?php if($user->isLoggedIn()): ?>
                     <div id="addContainer"><button id="addBtn" type="submit" name="addBtn" class="btn btn-default" href="#"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add One</button></div>
                 <?php else: ?>
@@ -16,7 +16,7 @@
             </ol>
             <?php if($user->isLoggedIn()): ?>
                 <!-- Start upload form -->
-                <form target="upload-frame" id="moduleForm" name="moduleForm" class="form-horizontal" role="form" action="app/parsers/create_module.php" method="post" enctype="multipart/form-data">
+                <form target="upload-frame" id="uploadForm" name="uploadForm" class="form-horizontal" role="form" action="../app/parsers/create_file.php" method="post" enctype="multipart/form-data">
                     <fieldset>
                         <legend>Add Module</legend>
                         <div class="form-group field hide-me">
@@ -28,18 +28,19 @@
                         <div class="form-group field hide-me">
                             <label for="description" class="col-sm-2 control-label">Description</label>
                             <div class="col-sm-10">
-                                <textarea name="description" id="description" rows="5" form="moduleForm" class="form-control" placeholder="Description"></textarea>
+                                <textarea name="description" id="description" rows="5" form="uploadForm" class="form-control" placeholder="Description"></textarea>
                             </div>
                         </div>
                         <div class="form-group field hide-me">
                             <label for="file" class="col-sm-2 control-label">File</label>
                             <div class="col-sm-10">
-                                <input type="file" name="module-file" id="module-file">
+                                <input type="file" name="upload-file" id="upload-file">
                             </div>
                         </div>
                         <input type="hidden" name="u_id" id="u_id" value="<?php echo $user->data()->id ?>">
                         <input type="hidden" name="username" id="username" value="<?php echo $user->data()->username ?>">
                         <input type="hidden" name="name" id="name" value="<?php echo $user->data()->name ?>">
+                        <input type="hidden" name="category" id="category" value="modules">
                         <input type="hidden" name="pvt" id="pvt" value="0">
                         <div class="form-group hide-me">
                             <div class="col-sm-offset-2 col-sm-10">
@@ -56,7 +57,7 @@
                                     
                                     <p id="loaded_n_total"></p>
                                 </div>
-                                <iframe class="embed-responsive-item" name="upload-frame" id="upload-frame" src="app/parsers/create_module.php" frameborder="0"></iframe>
+                                <iframe class="embed-responsive-item" name="upload-frame" id="upload-frame" src="../app/parsers/create_file.php" frameborder="0"></iframe>
                             </div>
                         </div>
                     </fieldset>
@@ -89,7 +90,7 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div id="module-list" class="col-lg-12">
+        <div id="res-list" class="col-lg-12">
             <div class="table-responsive">
                 <table class="table table-hover">
                     <thead>

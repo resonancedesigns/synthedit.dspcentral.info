@@ -9,16 +9,21 @@ function _(el) {
 
 // Ajax file uploading functions
 function uploadFile() {
-    var file = _('module-file').files[0];
+    var file = _('upload-file').files[0];
+    // For testing/debuging, remove when done
     console.log(file.name+' | '+file.size+' | '+file.type);
+    var category = _('category').value;
+    // For testing/debuging, remove when done
+    console.log(category.value);
     var formdata = new FormData();
-    formdata.append('module-file', file);
+    formdata.append('upload-file', file);
+    formdata.append('category', category);
     var ajax = new XMLHttpRequest();
     ajax.upload.addEventListener('progress', progressHandler, false);
     ajax.addEventListener('load', completeHandler, false);
     ajax.addEventListener('error', errorHandler, false);
     ajax.addEventListener('abort', abortHandler, false);
-    ajax.open('POST', 'app/parsers/upload_module.php');
+    ajax.open('POST', 'app/parsers/upload_file.php');
     ajax.send(formdata);
 }
 function progressHandler(event) {
@@ -103,7 +108,7 @@ $('#addBtn').click(function() {
     $('#addContainer').animate({
         opacity: 0
     }, 1000).hide(1000);
-    $('#moduleForm').slideDown(1000);
+    $('#uploadForm').slideDown(1000);
 });
 
 $('#cancelBtn').click(function() {
@@ -111,7 +116,7 @@ $('#cancelBtn').click(function() {
     $('#addContainer').show().animate({
         opacity: 1
     }, 1000);
-    $('#moduleForm').slideUp(1000);
+    $('#uploadForm').slideUp(1000);
 });
 
 $('#uploadBtn').click(function() {

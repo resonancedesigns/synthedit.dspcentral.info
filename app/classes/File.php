@@ -2,7 +2,7 @@
 class File {
 	public function __construct() {
 		$this->p = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-		$this->perP = isset($_GET['per-page']) && $_GET['per-page'] <= 50 ? (int)$_GET['per-page'] : 5;
+		$this->perP = isset($_GET['per-page']) && $_GET['per-page'] <= 50 ? (int)$_GET['per-page'] : 10;
 		$this->start = ($this->p > 1) ? ($this->p * $this->perP) - $this->perP : 0;
 	}
 
@@ -26,14 +26,14 @@ class File {
 			$fileList .= '
 				<tr onclick="showDesc' . $file['id'] . '()" class="file-item">
 					<td>' . $file['title'] . '</td>
-					<td><a href="files/modules/' . $file['file'] . '">' . $file['file'] . '</a></td>
+					<td><a href="files/' . $file['category'] . '/' . $file['file'] . '">' . $file['file'] . '</a></td>
 					<td>' . $file['username'] . '</td>
 					<td>' . $file['created_at'] . '</td>
 				</tr>
 				<tr id="desc' . $file['id'] . '" class="fileDescription tab-desc">
 					<td colspan="4">
 						<div>
-							<h4>' . $file['title'] . '<sub class="pull-right"><a href="files/modules/' . $file['file'] . '" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Download</a></sub></h4>
+							<h4>' . $file['title'] . '<sub class="pull-right"><a href="files/' . $file['category'] . '/' . $file['file'] . '" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Download</a></sub></h4>
 							<p>' . $file['description'] . '</p>
 							<hr>
 						</div>

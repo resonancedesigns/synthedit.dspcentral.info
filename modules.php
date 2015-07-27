@@ -12,7 +12,7 @@ $modules = new File();
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <html class="no-js" lang="en">
     <head>
-        <title>SynthEdit @ dspCentral</title>
+        <title>SynthEdit @ dspCentral - Modules</title>
         <?php include_once INC_ROOT . '/includes/content/meta/main.php' ?>
         <!-- Load CSS -->
         <link rel="stylesheet" href="css/se-dspcentral.css">
@@ -31,7 +31,6 @@ $modules = new File();
     <body>
         <div id="modules">
             <?php
-            
             if($user->isLoggedIn()) {
                 // If user is signed in, display the following HTML -->
                 include_once INC_ROOT . '/includes/layout/signed_in_nav.static.php';

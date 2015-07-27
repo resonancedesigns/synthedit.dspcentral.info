@@ -1,5 +1,16 @@
 ### HEAD
 
+### 0.0.9 (July 26th, 2015)
+*   Created remaining resources pages/views
+*   Made file directory dynamic in fileList function of 'File' class
+*   Increased default results per page to 10
+*   Made some css class names and form names more generic
+*   Added hidden form field for category
+*   Minor content updates
+*   Replaced app/parsers/create_module.php and app/parsers/upload_module.php in favor of app/parsers/create_file.php and app/parsers/upload_file.php more more generic file handling
+*   Placed all client-side files in 'public' folder
+*   Root index now redirects to 'public' folder
+
 ### 0.0.8 (July 24th, 2015)
 *   Added documentation item to resources menu
 *   Added breadcrumbs to main content pages

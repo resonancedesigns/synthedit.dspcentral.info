@@ -2,10 +2,6 @@
     <div class="row-fluid">
     	<div class="col-lg-12">
             <h2 class="members-headers">Change Password<small>Fill in the form below to change your password... .. .</small></h2>
-            <!-- Display incorrect login error if one exists -->
-            <?php // print "<h4 class='errorMsg'>$loginFailDisplay</h4>"; ?>
-            <!-- Display validation errors is any exist -->
-            <?php // print "<h4 class='errorMsg'>$errorMsgsDisplay</h4>"; ?>
 
 			<form id="passwordForm" class="form-horizontal" role="form" action="" method="post">
                 <div class="form-group field">
@@ -31,9 +27,6 @@
                         <button id="submit" type="submit" name="submit" class="btn btn-default">Change</button>
                         <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
                     </div>
-                </div>
-                <div class="col-sm-offset-2 col-sm-10 forgot">
-                    <a href="forgot-password.php">Forgot password</a> - <a href="forgot-username.php">Forgot username</a>
                 </div>
             </form>
         </div>

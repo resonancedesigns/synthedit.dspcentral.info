@@ -138,7 +138,7 @@ legend {
 	color: #ff3e00;
 }
 
-#moduleForm {
+#uploadForm {
 	display: none;
 }
 
@@ -178,7 +178,7 @@ p.upload-frame {
     color: #5e9f00;
 }
 
-h1#modules {
+h1.res-headers {
 	margin-bottom: 20px;
 }
 
@@ -196,12 +196,12 @@ h1#modules {
 
 div#pagination-bottom ul.pagination,
 div#pagination-top ul.pagination,
-div#module-list table.table,
+div#res-list table.table,
 div#modules ol.breadcrumb {
 	margin-bottom: 0;
 }
 
-form#moduleForm fieldset {
+form#uploadForm fieldset {
 	margin-top: 20px;
 }
 
@@ -277,11 +277,11 @@ form#moduleForm fieldset {
 	background-color: transparent !important;
 }
 
-#module-list h4 {
+#res-list h4 {
 	margin-top: 0;
 }
 
-#module-list h4 sub {
+#res-list h4 sub {
 	bottom: 0;
 }
 
