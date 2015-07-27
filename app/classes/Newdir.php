@@ -1,7 +1,7 @@
 <?php 
 class NewDir extends SplFileInfo {
     public function createThumbDirectory() {
-        return $this->createSubDirectory('thumb');
+        return $this->createSubDirectory('thmbs');
     }
     public function createImageDirectory() {
         return $this->createSubDirectory('imgs');

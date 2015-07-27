@@ -92,7 +92,7 @@ $(document).ready(function() {
 
 // Display the "terms" content
 $('#openTerms').click(function () {
-    $('#termsContent').css('display', 'block');
+    $('#termsContent').toggle();
 });
 
 // Back To Top button animation

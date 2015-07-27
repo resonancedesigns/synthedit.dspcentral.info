@@ -1,6 +1,7 @@
 <?php
 require_once ('../app/core/init.php');
 $user = new User();
+$data = $user->data();
 if(!$user->isLoggedIn()) {
 	Redirect::to('index.php');
 }
@@ -22,7 +23,7 @@ if(!$user->isLoggedIn()) {
        	<div id="update">
        		<?php 
        		include_once INC_ROOT . '/includes/layout/signed_in_nav.static.php';
-       		include_once INC_ROOT . '/includes/content/general/submit-content.php';
+       		include_once INC_ROOT . '/includes/content/general/submit_content.php';
        		include_once INC_ROOT . '/includes/layout/footer.php';
        		?>
 	    </div>

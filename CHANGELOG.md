@@ -1,5 +1,15 @@
 ### HEAD
 
+### 0.1.0 (Jult 27th, 2015)
+*   Revised registration page/view
+*   Fixed typo in 'Newdir' class
+*   Cleaned up and organized custom.css
+*   Revised terms show/hide method
+*   Updated profile pic and banner pic parsers in relation to new public directory
+*   Added copy function for index redirect to user directories
+*   Removed some depricated files
+*   Fixed issue with profile pic in navigation
+
 ### 0.0.9 (July 26th, 2015)
 *   Created remaining resources pages/views
 *   Made file directory dynamic in fileList function of 'File' class

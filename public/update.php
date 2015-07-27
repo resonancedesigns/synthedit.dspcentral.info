@@ -1,9 +1,8 @@
 <?php
-error_reporting(E_ALL & ~E_NOTICE);
 require_once ('../app/core/init.php');
 
 $user = new User();
-
+$data = $user->data();
 if(!$user->isLoggedIn()) {
 	Redirect::to('index.php');
 }

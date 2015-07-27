@@ -1,3 +1,4 @@
+/* General styling */
 html,
 body {
 	font-family: 'Comfortaa', cursive;
@@ -18,6 +19,21 @@ legend {
     vertical-align: bottom;
 }
 
+#page-content,
+#content-swapper {
+	margin-top: 60px;
+}
+
+.sub-button {
+	bottom: .3em;
+	padding-left: 1em;
+}
+
+#addContainer {
+	display: inline-block;
+}
+
+/* Logo Styling */
 .se-brand {
 	padding: 6px;
 }
@@ -57,27 +73,6 @@ legend {
 	color: #DDDDDD;
 }
 
-#page-content,
-#content-swapper {
-	margin-top: 60px;
-}
-
-.profileBanner {
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	margin-top: -8px;
-	margin-bottom: 10px;
-}
-
-.profilePic {
-	max-width: 150px;
-	padding-bottom: 14px;
-}
-
-.profileHeaders {
-	margin-top: 0;
-}
-
 .black {
 	color: #000000;
 }
@@ -97,6 +92,37 @@ legend {
 .C-image {
 	max-width: 32px;
     display: inline-block;
+}
+
+/* Navigation styling */
+.user-menu {
+	padding: 6px !important;
+}
+
+.user-icon {
+	max-width: 38px !important;
+	padding: 0;
+}
+
+#toTop {
+	display: none;
+}
+
+/* Profile styling */
+.profileBanner {
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	margin-top: -8px;
+	margin-bottom: 10px;
+}
+
+.profilePic {
+	max-width: 150px;
+	padding-bottom: 14px;
+}
+
+.profileHeaders {
+	margin-top: 0;
 }
 
 /* Progress Display */
@@ -138,8 +164,13 @@ legend {
 	color: #ff3e00;
 }
 
+/* Upload form */
 #uploadForm {
 	display: none;
+}
+
+form#uploadForm fieldset {
+	margin-top: 20px;
 }
 
 #upload-frame {
@@ -159,11 +190,6 @@ h1.upload-frame sub {
 	color: #ff3e00;
 }
 
-.sub-button {
-	bottom: .3em;
-	padding-left: 1em;
-}
-
 h4.upload-frame {
 	margin: 0.2em;
 }
@@ -178,40 +204,37 @@ p.upload-frame {
     color: #5e9f00;
 }
 
+/* Results view */
 h1.res-headers {
 	margin-bottom: 20px;
 }
 
-#addContainer {
-	display: inline-block;
+.res-label {
+	text-align: right;
+	line-height: 20px;
+}
+
+#res-list h4 {
+	margin-top: 0;
+}
+
+#res-list h4 sub {
+	bottom: 0;
 }
 
 #pagination-bottom {
 	margin-bottom: 68px;
 }
 
-.selected {
-	font-weight: bold;
-}
-
 div#pagination-bottom ul.pagination,
 div#pagination-top ul.pagination,
 div#res-list table.table,
-div#modules ol.breadcrumb,
-div#prefabs ol.breadcrumb,
-div#graphics ol.breadcrumb,
-div#tools ol.breadcrumb,
-div#docs ol.breadcrumb,
-div#misc ol.breadcrumb {
+div#content-swapper ol.breadcrumb {
 	margin-bottom: 0;
 }
 
-form#uploadForm fieldset {
-	margin-top: 20px;
-}
-
-.fileDescription {
-	display: none;
+.selected {
+	font-weight: bold;
 }
 
 @-webkit-keyframes descAnim {
@@ -265,10 +288,6 @@ form#uploadForm fieldset {
 	animation-fill-mode: forwards;
 }
 
-.fileDescription td {
-	padding: 0 !important;
-}
-
 .show-desc div {
     background-color: #ccc;
     border-bottom-left-radius: 10px;
@@ -282,12 +301,12 @@ form#uploadForm fieldset {
 	background-color: transparent !important;
 }
 
-#res-list h4 {
-	margin-top: 0;
+.fileDescription {
+	display: none;
 }
 
-#res-list h4 sub {
-	bottom: 0;
+.fileDescription td {
+	padding: 0 !important;
 }
 
 .file-item {
@@ -298,20 +317,6 @@ tr.tab-desc hr {
 	border-color: #555;
 }
 
-#toTop {
+#termsContent {
 	display: none;
-}
-
-.user-menu {
-	padding: 6px !important;
-}
-
-.user-icon {
-	max-width: 38px !important;
-	padding: 0;
-}
-
-.res-label {
-	text-align: right;
-	line-height: 20px;
 }

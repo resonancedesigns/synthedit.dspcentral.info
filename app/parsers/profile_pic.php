@@ -18,7 +18,7 @@ if (!empty($_FILES['profile_pic']['name'])) {
 	$imgtype = $_FILES['profile_pic']['type'];
 	$ext = GetImageExtension($imgtype);
 	$imagename = date('d-m-y').'-'.time().$ext;
-	$target_path = '../../users/'.escape($user->data()->username).'/imgs/'.$imagename;
+	$target_path = '../../public/users/'.escape($user->data()->username).'/imgs/'.$imagename;
 
 	if(move_uploaded_file($temp_name, $target_path)) {
 		$query_upload = mysqli_query($connectMe, "UPDATE users SET profile_pic = '$imagename' WHERE username = '$username'") or die (mysqli_error($connectMe));
@@ -100,8 +100,8 @@ if (!empty($_FILES['profile_pic']['name'])) {
     	// in which thumbnails will be placed and the thumbnail's width.
     	// We are assuming that the path will be a relative path working
     	// both in the filesystem, and through the web for links
-    	createThumbs('../../users/'.escape($user->data()->username).'/imgs/','../../users/'.escape($user->data()->username).'/thmbs/',100);
-		Redirect::to('../../pic_updated.php');
+    	createThumbs('../../public/users/'.escape($user->data()->username).'/imgs/','../../public/users/'.escape($user->data()->username).'/thmbs/',100);
+		Redirect::to('../../public/pic_updated.php');
 	} else {
 		exit("Error while uploading image on the server.");
 	}

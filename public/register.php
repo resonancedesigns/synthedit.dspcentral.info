@@ -73,6 +73,13 @@ if(Input::exists()) {
             $fileOrig = 'users/default/imgs/default.png';
             $fileCopy = 'users/' . Input::get('username') . '/imgs/default.png';
             copy($fileOrig, $fileCopy);
+            $indexOrig = 'users/default/imgs/index.php';
+            $indexCopy1 = 'users/' . Input::get('username') . '/index.php';
+            $indexCopy2 = 'users/' . Input::get('username') . '/imgs/index.php';
+            $indexCopy3 = 'users/' . Input::get('username') . '/thmbs/index.php';
+            copy($indexOrig, $indexCopy1);
+            copy($indexOrig, $indexCopy2);
+            copy($indexOrig, $indexCopy3);
 
             // Send an email to the new user informing them account creation was successful
             smtpmailer(

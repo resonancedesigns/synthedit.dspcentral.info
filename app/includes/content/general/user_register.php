@@ -63,8 +63,8 @@
                             <div id="termsContent">
   								<h4>Member System Terms Of Use</h4>
   								<ol>
-  									<li>You could create whatever terms you wish</li>
-  									<li>This is just an example:</li>
+  									<li>TODO: Create terms</li>
+  									<li>This is an example:</li>
   									<li>You may not use this service to collect information on others for the purpose of spamming.</li>
   								</ol>
 							</div>

@@ -47,7 +47,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <img class="profilePic user-icon" src="users/<?php echo escape($data->username) ?>/imgs/<?php echo escape($data->profile_pic) ?>">
+                        <img class="user-icon" src="users/<?php echo escape($data->username) ?>/imgs/<?php echo escape($data->profile_pic) ?>">
                     </a>
                     <ul class="dropdown-menu text-right" role="menu">
                         <li id="content" class="text-right"><a href="submit-content.php">Submit Content <span class="glyphicon glyphicon-open" aria-hidden="true"></span></a></li>
