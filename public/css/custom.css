@@ -188,6 +188,7 @@ h1.upload-frame sub {
 	margin-left: 1em;
 	bottom: 0;
 	color: #ff3e00;
+	line-height: 20px;
 }
 
 h4.upload-frame {
@@ -207,6 +208,18 @@ p.upload-frame {
 /* Results view */
 h1.res-headers {
 	margin-bottom: 20px;
+}
+
+.fileDescription {
+	display: none;
+}
+
+.fileDescription td {
+	padding: 0 !important;
+}
+
+.file-item {
+	cursor: pointer;
 }
 
 .res-label {
@@ -299,18 +312,6 @@ div#content-swapper ol.breadcrumb {
 
 .show-desc:hover {
 	background-color: transparent !important;
-}
-
-.fileDescription {
-	display: none;
-}
-
-.fileDescription td {
-	padding: 0 !important;
-}
-
-.file-item {
-	cursor: pointer;
 }
 
 tr.tab-desc hr {

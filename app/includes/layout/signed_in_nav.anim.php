@@ -20,12 +20,12 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Resources <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Graphics</a></li>
-                        <li><a href="#">Modules</a></li>
-                        <li><a href="#">Prefabs</a></li>
-                        <li><a href="#">Tools</a></li>
-                        <li><a href="#">Docs</a></li>
-                        <li><a href="#">Misc</a></li>
+                        <li><a href="modules.php">Modules</a></li>
+                        <li><a href="prefabs.php">Prefabs</a></li>
+                        <li><a href="graphics.php">Graphics</a></li>
+                        <li><a href="tools.php">Tools</a></li>
+                        <li><a href="docs.php">Docs</a></li>
+                        <li><a href="misc.php">Misc</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">

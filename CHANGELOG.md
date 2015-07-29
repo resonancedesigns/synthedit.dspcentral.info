@@ -1,6 +1,15 @@
 ### HEAD
 
-### 0.1.0 (Jult 27th, 2015)
+### 0.1.1 (July 28th, 2015)
+*   Updated nagivation to point to all latest pages/views
+*   Messages sent via 'flash' function now appear under initial welcome message on home page/view
+*   Removed some depricated files
+*   Fixed 'submit content' page/view
+*   Updated form action locations for update_profile.php
+*   Adjusted some line locations of style elements in custom.css to avoid using the !important param
+*   Added dynamic user link to fileList function of 'File' class
+
+### 0.1.0 (July 27th, 2015)
 *   Revised registration page/view
 *   Fixed typo in 'Newdir' class
 *   Cleaned up and organized custom.css

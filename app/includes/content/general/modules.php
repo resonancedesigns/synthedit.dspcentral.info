@@ -28,7 +28,7 @@
                         <div class="form-group field hide-me">
                             <label for="description" class="col-sm-2 control-label">Description</label>
                             <div class="col-sm-10">
-                                <textarea name="description" id="description" rows="5" form="uploadForm" class="form-control" placeholder="Description"></textarea>
+                                <textarea name="description" id="description" rows="5" class="form-control" placeholder="Description"></textarea>
                             </div>
                         </div>
                         <div class="form-group field hide-me">

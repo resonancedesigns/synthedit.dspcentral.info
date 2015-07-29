@@ -46,7 +46,7 @@
                 	<?php // print "<h4 class='errorMsg'>$loginFailDisplay</h4>"; ?>
                 	<!-- Display validation errors is any exist -->
                 	<?php // print "<h4 class='errorMsg'>$errorMsgsDisplay</h4>"; ?>
-                    <form id="picForm" class="form-horizontal" role="form" action="app/parsers/profile_pic.php" method="post" enctype="multipart/form-data">
+                    <form id="picForm" class="form-horizontal" role="form" action="../app/parsers/profile_pic.php" method="post" enctype="multipart/form-data">
                         <div class="form-group field">
                             <label for="profile_pic" class="col-sm-2 control-label">Profile Pic</label>
                             <div class="col-sm-10">
@@ -68,7 +68,7 @@
                 	<?php // print "<h4 class='errorMsg'>$loginFailDisplay</h4>"; ?>
                 	<!-- Display validation errors is any exist -->
                 	<?php // print "<h4 class='errorMsg'>$errorMsgsDisplay</h4>"; ?>
-                    <form id="bannerForm" class="form-horizontal" role="form" action="app/parsers/banner_pic.php" method="post" enctype="multipart/form-data">
+                    <form id="bannerForm" class="form-horizontal" role="form" action="../app/parsers/banner_pic.php" method="post" enctype="multipart/form-data">
                         <div class="form-group field">
                             <label for="banner_pic" class="col-sm-2 control-label">Banner Pic</label>
                             <div class="col-sm-10">

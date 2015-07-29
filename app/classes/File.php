@@ -27,7 +27,7 @@ class File {
 				<tr onclick="showDesc' . $file['id'] . '()" class="file-item">
 					<td>' . $file['title'] . '</td>
 					<td><a href="files/' . $file['category'] . '/' . $file['file'] . '">' . $file['file'] . '</a></td>
-					<td>' . $file['username'] . '</td>
+					<td><a href="profile.php?user=' . $file['username'] . '">' . $file['username'] . '</a></td>
 					<td>' . $file['created_at'] . '</td>
 				</tr>
 				<tr id="desc' . $file['id'] . '" class="fileDescription tab-desc">

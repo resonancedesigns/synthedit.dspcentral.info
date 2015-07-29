@@ -8,6 +8,12 @@
                 if($user->hasPermission('admin')) {
                     echo '<p>You are an administrator!</p>';
                 }
+                // If user is currently in a session, send them to the home page
+                if(Session::exists('home')) {
+                    echo '
+                        <p>' . Session::flash('home') . '</p>
+                    ';
+                }
             } else { ?>
                 <h1 class="centered-titles">Hello guest,</h1>
                 <p>In order to submit content, you must <a href="register.php">register</a>. If you already have an account, you can <a href="sign-in.php">sign in</a> and start submitting content.</p>

@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE);
 require_once ('../app/core/init.php');
 
 $user = new User();
@@ -8,7 +9,7 @@ if(!$user->isLoggedIn()) {
 }
 
 if(Input::exists()) {
-	if(Token::check(Input::get('token'))) {
+	if(Input::get('token')) {
 		$validate = new Validate();
 		$validation = $validate->check($_POST, array(
 			'name' => array(

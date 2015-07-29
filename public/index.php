@@ -25,19 +25,6 @@ $data = $user->data();
     <body>
         <div id="index">
 	        <?php
-	        // If user is currently in a session, send them to the home page
-	        if(Session::exists('home')) {
-	            echo '
-	                <div class="container">
-	                    <div class="row">
-	                        <div id="page-content" class="col-lg-12">'
-	                            . Session::flash('home') . 
-	                        '</div>
-	                    </div>
-	                </div>
-	            ';
-	        }
-	        $user = new User();
 	        // User is logged in to the system
 	        if($user->isLoggedIn()) {        
 	            // If user is signed in, display the following HTML -->
