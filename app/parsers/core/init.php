@@ -6,15 +6,15 @@ ini_set('display_errors', 'On');
 
 define('INC_ROOT', dirname(__DIR__));
 
-define('GUSER', 'dspcentral.info@gmail.com'); // GMail username
-define('GPWD', 'Mungching1!'); // GMail password
+define('GUSER', 'youremail@gmail.com'); // GMail username
+define('GPWD', 'yourpassword'); // GMail password
 
 $GLOBALS['config'] = array (
     'mysql' => array (
-        'host' => '127.0.0.1',
-        'username' => 'rezinunts',
-        'password' => 'Mungching1!',
-        'db' => 'dspcentral_se'
+        'host' => 'localhost', // MySQL host
+        'username' => 'root', // MySQL username
+        'password' => 'password', // MySQL password
+        'db' => 'database' // MySQL database name
     ),
     'remember' => array (
         'cookie_name' => 'hash',
@@ -44,9 +44,9 @@ if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Confi
     }
 }
 
-$dbHost = '127.0.0.1';
-$dbUsername = 'rezinunts'; 
-$dbPassword = 'Mungching1!'; 
-$dbDatabase = 'dspcentral_se';
+$dbHost = 'localhost'; // MySQL host
+$dbUsername = 'root'; // MySQL username
+$dbPassword = 'password'; // MySQL password
+$dbDatabase = 'database'; // MySQL database name
 
 $connectMe = mysqli_connect("$dbHost","$dbUsername","$dbPassword", "$dbDatabase") or die ("could not connect to mysql");

@@ -1,8 +1,8 @@
 <?php
-$dbHost = '127.0.0.1';
-$dbUsername = 'rezinunts'; 
-$dbPassword = 'Mungching1!'; 
-$dbDatabase = 'dspcentral_se';
+$dbHost = 'localhost'; // MySQL host
+$dbUsername = 'root'; // MySQL username
+$dbPassword = 'password'; // MySQL password
+$dbDatabase = 'database'; // MySQL database name
 
 $connectMe = mysqli_connect("$dbHost","$dbUsername","$dbPassword", "$dbDatabase") or die ("could not connect to mysql");
 ?>
