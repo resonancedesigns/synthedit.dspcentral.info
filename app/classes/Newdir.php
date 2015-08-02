@@ -8,6 +8,6 @@ class NewDir extends SplFileInfo {
     }
     private function createSubDirectory($name) {
         $path = $this->getPathname();
-        return mkdir($path . './' . $name, 0755, true);
+        return mkdir($path . '/' . $name, 0755, true);
     }
 }

@@ -17,6 +17,17 @@ $allowed = [
 	'bmp',
 	'psd',
 	'pdf',
+	'txt',
+	'doc',
+	'docx',
+	'xls',
+	'xlsx',
+	'ppt',
+	'pptx',
+	'epub',
+	'od',
+	'odx',
+	'rtf',
 	'vst',
 	'dll',
 	'fxp',
@@ -68,7 +79,7 @@ if (!empty($_FILES['upload-file']['name'])) {
 	if(in_array($ext, $allowed)) {
 		// If it is, insert database record for the file and send message to the user
 		$query_create = mysqli_query($connectMe, "INSERT INTO files (u_id, username, name, file, title, description, category, created_at, pvt) VALUES('$u_id','$username','$name','$filename','$title','$description','$category',date('Y-m-d H:i:s'),'$pvt')") or die (mysqli_error($connectMe));
-		$uploadMsg = "File uploaded successfully! =) <a id='addAnother' type='submit' name='addAnother' class='btn btn-default' href='submit-content.php' target='_parent'>Add Another</a>";
+		$uploadMsg = "File uploaded successfully! =) <a id='addAnother' type='submit' name='addAnother' class='btn btn-default' href='../../public/submit-content.php' target='_parent'>Add Another</a>";
 		$fileDetails = "
 			<div class='col-sm-6'><h4 class='upload-frame'>Title: <sub>$title</sub></h4></div>
 			<div class='col-sm-6'><h4 class='upload-frame'>User: <sub>$username</sub></h4></div>

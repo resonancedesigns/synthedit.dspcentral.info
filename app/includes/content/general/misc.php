@@ -5,7 +5,7 @@
                 <?php if($user->isLoggedIn()): ?>
                     <div id="addContainer"><button id="addBtn" type="submit" name="addBtn" class="btn btn-default" href="#"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add One</button></div>
                 <?php else: ?>
-                    <sub>You must <a href="http://dspcentral.synthedit/sign-in.php">sign in</a> to add one. Need an account? <a href="http://dspcentral.synthedit/register.php">Register here</a>.</sub>
+                    <sub>You must <a href="sign-in.php">sign in</a> to add one. Need an account? <a href="register.php">Register here</a>.</sub>
                 <?php endif; ?>
             </sub></h1>
             <!-- TODO: Make breadcrumbs dynamic -->
@@ -97,7 +97,7 @@
                         <tr>
                             <th>Title</th>
                             <th>File</th>
-                            <th>User</th>
+                            <th>Uploaded By</th>
                             <th>Creation</th>
                         </tr>
                         <tbody>

@@ -1,5 +1,13 @@
 ### HEAD
 
+### 0.1.2 (August 2nd, 2015)
+*   Fixed capilization of 'NewDir' class
+*   Cleared some redundant files
+*   Fixed critical typo in 'NewDir' class
+*   Changed absolute URL path in anchor tag to relative URL path in resource pages
+*   Added to allowed file formats array
+*   Minor copy edit to registratioin view/page
+
 ### 0.1.1 (July 28th, 2015)
 *   Updated nagivation to point to all latest pages/views
 *   Messages sent via 'flash' function now appear under initial welcome message on home page/view

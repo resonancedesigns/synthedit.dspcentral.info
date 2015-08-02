@@ -2,7 +2,7 @@
     <!-- Signed out content -->
     <div class="row-fluid">
         <div id="content-swapper" class="col-lg-12">
-            <h2 class="members-headers">Register <small>Register an account to log in... .. .</small></h2>
+            <h2 class="members-headers">Register <small>Register an account to sign-in... .. .</small></h2>
             <div id="errorMsgs">
             	<!-- Display incorrect login error if one exists -->
                 <h4 class="errorMsg"><?php print $registeredDisplay; ?></h4>
@@ -61,7 +61,7 @@
                                 <input type="checkbox" name="terms" id="terms_input">I agree to the <a href="#" id="openTerms">Terms Of Use</a>.
                             </label>
                             <div id="termsContent">
-  								<h4>Member System Terms Of Use</h4>
+  								<h4>dspCentral.info Terms Of Use</h4>
   								<ol>
   									<li>TODO: Create terms</li>
   									<li>This is an example:</li>
