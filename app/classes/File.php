@@ -11,16 +11,16 @@ class File {
 		return $connection;
 	}
 
-	public function queryConstructor($where) {
+	public function queryConstructor($where, $pvt, $b1, $b2) {
 		$db = $this->connectApp();
-		$files = $db->prepare("SELECT * FROM files WHERE category = '{$where}' LIMIT {$this->start}, {$this->perP}");
+		$files = $db->prepare("SELECT * FROM files WHERE category = '{$where}' AND pvt = '{$pvt}' AND u_id BETWEEN '{$b1}' AND '{$b2}' LIMIT {$this->start}, {$this->perP}");
 		$files->execute();
 		$files = $files->fetchAll(PDO::FETCH_ASSOC);
 		return $files;
 	}
 
-	public function fileList($where){
-		$files = $this->queryConstructor($where);
+	public function fileList($where, $pvt, $b1, $b2){
+		$files = $this->queryConstructor($where, $pvt, $b1, $b2);
 		$fileList = NULL;
 		foreach ($files as $file) {
 			$fileList .= '

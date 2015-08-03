@@ -1,5 +1,12 @@
 ### HEAD
 
+### 0.1.3 (August 3rd, 2015)
+*   Added more secure and sophisticated form validation and error message handling to all asset submission form parsers
+*   Added author, license, and access attributes to all asset submission forms
+*   Improved on dynamic query constructor of 'File' class for more complex SQL query handling
+*   Implimented privacy functions for files
+*   
+
 ### 0.1.2 (August 2nd, 2015)
 *   Fixed capilization of 'NewDir' class
 *   Cleared some redundant files

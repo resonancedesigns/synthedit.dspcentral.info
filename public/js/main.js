@@ -14,9 +14,21 @@ function uploadFile() {
     var category = _('category').value;
     // For testing/debuging, remove when done
     console.log(category.value);
+    var title = _('title').value;
+    // For testing/debuging, remove when done
+    console.log(title.value);
+    var author = _('author').value;
+    // For testing/debuging, remove when done
+    console.log(author.value);
+    var description = _('description').value;
+    // For testing/debuging, remove when done
+    console.log(description.value);
     var formdata = new FormData();
     formdata.append('upload-file', file);
     formdata.append('category', category);
+    formdata.append('title', title);
+    formdata.append('author', author);
+    formdata.append('description', description);
     var ajax = new XMLHttpRequest();
     ajax.upload.addEventListener('progress', progressHandler, false);
     ajax.addEventListener('load', completeHandler, false);
@@ -26,7 +38,7 @@ function uploadFile() {
     ajax.send(formdata);
 }
 function progressHandler(event) {
-    _('loaded_n_total').innerHTML = 'Uploaded '+event.loaded+' of '+event.total+' bytes successfully.';
+    _('loaded_n_total').innerHTML = 'Processed '+event.loaded+' of '+event.total+' bytes successfully.';
     var percent = (event.loaded / event.total) * 100;
     _('progressBar').style.width = Math.round(percent)+'%';
     _('status').innerHTML = Math.round(percent)+'% uploaded... please wait';

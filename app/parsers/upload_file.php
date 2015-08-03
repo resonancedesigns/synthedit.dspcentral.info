@@ -48,6 +48,9 @@ $allowed = [
 // Check if a file has been selected
 if (!empty($_FILES['upload-file']['name'])) {
 	// If it has, gather the form data and prepare it for the database query
+	$title = $_POST['title'];
+	$author = $_POST['author'];
+	$description = $_POST['description'];
 	$category = $_POST['category'];
 	$file_name = $_FILES['upload-file']['name'];
 	$temp_name = $_FILES['upload-file']['tmp_name'];
@@ -60,10 +63,34 @@ if (!empty($_FILES['upload-file']['name'])) {
 	} else {
 		$ext = explode('.', $filename);
 		$ext = strtolower(end($ext));
-		if(in_array($ext, $allowed) && move_uploaded_file($temp_name, $target_path)) {
+
+		// Run form validation to check for errors
+	    $validate = new Validate();
+	    $validation = $validate->check($_POST, array(
+	        'title' => array(
+	            'required' => true,
+	            'min' => 3,
+	            'max' => 128,
+	            'unique' => 'files'
+	        ),
+	        'author' => array(
+	            'required' => true,
+	            'min' => 3
+	        ),
+	        'description' => array(
+	            'required' => true,
+	            'max' => '500'
+	        ),
+	        'category' => array(
+	        	'required' => true
+	        )
+	    ));
+
+		if($validation->passed() && in_array($ext, $allowed)) {
+			move_uploaded_file($temp_name, $target_path);
 			echo "<a href='../../public/files/$category/$filename'>$filename</a> uploaded successfully to the $category section.";
 		} else {
-			echo "Error: That file extension is not allowed."; 
+			echo "Error: Check the message(s) below."; 
 		}
 	}
 }

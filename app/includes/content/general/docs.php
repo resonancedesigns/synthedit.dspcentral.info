@@ -22,13 +22,32 @@
                         <div class="form-group field hide-me">
                             <label for="title" class="col-sm-2 control-label">Title</label>
                             <div class="col-sm-10">
-                                <input type="text" name="title" id="title" class="form-control" placeholder="Title" value="" autocomplete="off">
+                                <input type="text" name="title" id="title" class="form-control" placeholder="Title" value="<?php echo escape(Input::get('title')); ?>" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group field hide-me">
+                            <label for="author" class="col-sm-2 control-label">Author</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="author" id="author" class="form-control" placeholder="The original creator of the file" value="<?php echo escape(Input::get('author')); ?>" autocomplete="off">
                             </div>
                         </div>
                         <div class="form-group field hide-me">
                             <label for="description" class="col-sm-2 control-label">Description</label>
                             <div class="col-sm-10">
-                                <textarea name="description" id="description" rows="5" form="uploadForm" class="form-control" placeholder="Description"></textarea>
+                                <textarea name="description" id="description" rows="5" class="form-control" placeholder="Enter a description of 500 characters max"><?php echo escape(Input::get('description')); ?></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group field hide-me">
+                            <label for="license" class="col-sm-2 control-label">License</label>
+                            <div class="col-sm-10">
+                                <select name="license" id="license" class="form-control">
+                                    <option value="modules">Modules</option>
+                                    <option value="prefabs">Prefabs</option>
+                                    <option value="graphics">Graphics</option>
+                                    <option value="tools">Tools</option>
+                                    <option value="docs">Docs</option>
+                                    <option value="misc">Misc</option>
+                                </select>
                             </div>
                         </div>
                         <div class="form-group field hide-me">
@@ -41,7 +60,19 @@
                         <input type="hidden" name="username" id="username" value="<?php echo $user->data()->username ?>">
                         <input type="hidden" name="name" id="name" value="<?php echo $user->data()->name ?>">
                         <input type="hidden" name="category" id="category" value="docs">
-                        <input type="hidden" name="pvt" id="pvt" value="0">
+                        <div class="form-group field hide-me">
+                            <label for="pvt" class="col-sm-2 control-label">Access</label>
+                            <div class="col-sm-10">
+                                <label>
+                                    <input type="radio" name="pvt" id="pvtNo" value="no" checked>
+                                    No &mdash; This file is not private.
+                                </label>
+                                <label>
+                                    <input type="radio" name="pvt" id="pvtYes" value="yes">
+                                    Yes &mdash; This file is private.
+                                </label>
+                            </div>
+                        </div>
                         <div class="form-group hide-me">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button id="uploadBtn" type="submit" name="uploadBtn" class="btn btn-default" onclick="uploadFile()"><span class="glyphicon glyphicon-open" aria-hidden="true"></span> Upload</button>
@@ -101,7 +132,7 @@
                             <th>Creation</th>
                         </tr>
                         <tbody>
-                            <?php $docs->fileList('docs'); ?>
+                            <?php $docs->fileList('docs', 'no', '0', '999999999999'); ?>
                         </tbody>
                     </thead>
                 </table>
