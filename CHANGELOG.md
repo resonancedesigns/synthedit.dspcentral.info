@@ -3,7 +3,7 @@
 ### 0.1.4 (August 4th, 2015)
 *   Added userFiles function to 'File' class
 *   Modified existing functions in 'File' class in light of new userFiles function
-*   Fixed bug that wiped in the details of a signed in user when visiting someone elses profile
+*   Fixed bug that wiped out the details of a signed in user when they are visiting someone elses profile
 *   Significant update to view/page/styling of user profile
 *   Removed PHP ucfirst function from create_file.php parser
 
