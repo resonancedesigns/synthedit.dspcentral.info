@@ -1,11 +1,17 @@
 ### HEAD
 
+### 0.1.4 (August 4th, 2015)
+*   Added userFiles function to 'File' class
+*   Modified existing functions in 'File' class in light of new userFiles function
+*   Fixed bug that wiped in the details of a signed in user when visiting someone elses profile
+*   Significant update to view/page/styling of user profile
+*   Removed PHP ucfirst function from create_file.php parser
+
 ### 0.1.3 (August 3rd, 2015)
 *   Added more secure and sophisticated form validation and error message handling to all asset submission form parsers
 *   Added author, license, and access attributes to all asset submission forms
 *   Improved on dynamic query constructor of 'File' class for more complex SQL query handling
 *   Implimented privacy functions for files
-*   
 
 ### 0.1.2 (August 2nd, 2015)
 *   Fixed capilization of 'NewDir' class
