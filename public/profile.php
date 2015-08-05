@@ -1,15 +1,8 @@
 <?php
 require_once '../app/core/init.php';
-if(!$username = Input::get('user')) {
-	Redirect::to('index.php');
-} else {
-	$user = new User($username);
-	if(!$user->exists()) {
-		Redirect::to(404);
-	} else {
-		$data = $user->data();
-	}
-}
+$user = new User();
+$data = $user->data();
+$files = new File();
 ?>
 <html>
     <head>
@@ -22,21 +15,6 @@ if(!$username = Input::get('user')) {
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <?php
-        // Create the inline styling for the custom profile banner. 
-    	$userBanner = '
-			<style type="text/css">
-				.profileBanner {
-					background-image: url("users/' . $user->data()->username . '/imgs/' . $user->data()->banner_pic . '");
-				}
-	        </style>
-    	';
-    	// Check if the user has uploaded a custom profile banner image.
-    	if(!empty($user->data()->banner_pic)) {
-    		// If they have, insert the inline styling.
-    		echo $userBanner;
-    	} 
-        ?>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>

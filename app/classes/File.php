@@ -11,7 +11,7 @@ class File {
 		return $connection;
 	}
 
-	public function queryConstructor($where, $pvt, $b1, $b2) {
+	public function resourcesQueryConstructor($where, $pvt, $b1, $b2) {
 		$db = $this->connectApp();
 		$files = $db->prepare("SELECT * FROM files WHERE category = '{$where}' AND pvt = '{$pvt}' AND u_id BETWEEN '{$b1}' AND '{$b2}' LIMIT {$this->start}, {$this->perP}");
 		$files->execute();
@@ -19,8 +19,16 @@ class File {
 		return $files;
 	}
 
+	public function profilesQueryConstructor($pvt, $id) {
+		$db = $this->connectApp();
+		$files = $db->prepare("SELECT * FROM files WHERE pvt = '{$pvt}' AND u_id = '{$id}' LIMIT {$this->start}, {$this->perP}");
+		$files->execute();
+		$files = $files->fetchAll(PDO::FETCH_ASSOC);
+		return $files;
+	}
+
 	public function fileList($where, $pvt, $b1, $b2){
-		$files = $this->queryConstructor($where, $pvt, $b1, $b2);
+		$files = $this->resourcesQueryConstructor($where, $pvt, $b1, $b2);
 		$fileList = NULL;
 		foreach ($files as $file) {
 			$fileList .= '
@@ -47,6 +55,36 @@ class File {
 			';
 		};
         print $fileList;
+	}
+
+	public function userFiles($pvt, $id){
+		$files = $this->profilesQueryConstructor($pvt, $id);
+		$userFiles = NULL;
+		foreach ($files as $file) {
+			$userFiles .= '
+				<tr onclick="showDesc' . $file['id'] . '()" class="file-item">
+					<td>' . $file['title'] . '</td>
+					<td><a href="files/' . $file['category'] . '/' . $file['file'] . '">' . $file['file'] . '</a></td>
+					<td><a href="profile.php?user=' . $file['username'] . '">' . $file['username'] . '</a></td>
+					<td>' . $file['created_at'] . '</td>
+				</tr>
+				<tr id="desc' . $file['id'] . '" class="fileDescription tab-desc">
+					<td colspan="4">
+						<div>
+							<h4>' . $file['title'] . '<sub class="pull-right"><a href="files/' . $file['category'] . '/' . $file['file'] . '" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Download</a></sub></h4>
+							<p>' . $file['description'] . '</p>
+							<hr>
+						</div>
+					</td>
+				</tr>
+				<script>
+					function showDesc' . $file['id'] . '() {
+						_("desc' . $file['id'] . '").classList.toggle("show-desc");
+					}
+				</script>
+			';
+		};
+        print $userFiles;
 	}
 
 	public function pageInation($where) {

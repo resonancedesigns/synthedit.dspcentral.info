@@ -121,7 +121,7 @@ if (!empty($_FILES['upload-file']['name'])) {
 				<h4 class='upload-frame'>Category: <sub>$category</sub></h4>
 			</div>
 			<div class='col-sm-6'>
-				<h4 class='upload-frame'>Private: <sub>ucfirst($pvt)</sub></h4>
+				<h4 class='upload-frame'>Private: <sub>($pvt)</sub></h4>
 			</div>
 			<div class='col-sm-6'>
 				<h4 class='upload-frame'>License: <sub>$license</sub></h4>
