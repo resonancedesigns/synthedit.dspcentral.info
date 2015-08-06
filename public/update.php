@@ -4,6 +4,7 @@ require_once ('../app/core/init.php');
 
 $user = new User();
 $data = $user->data();
+$files = new File();
 if(!$user->isLoggedIn()) {
 	Redirect::to('index.php');
 }

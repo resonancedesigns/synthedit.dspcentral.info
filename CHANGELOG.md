@@ -1,5 +1,16 @@
 ### HEAD
 
+### 0.1.5 (August 5th, 2015)
+*   Modifications to the 'File' class to display author field and format date
+*   Minor copy edits to resource views/pages
+*   Created 'resource' view/page for displaying individual file properties
+*   Styling edits to 'edit profile' view/page
+*   Added user files section to 'edit profile' view/page
+*   Modified redirecting bug in user profile
+*   Added PHP uppercase function to create_file.php parser
+*   Added .md to allowed files array
+*   Styling edits
+
 ### 0.1.4 (August 4th, 2015)
 *   Added userFiles function to 'File' class
 *   Modified existing functions in 'File' class in light of new userFiles function

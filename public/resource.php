@@ -1,15 +1,15 @@
 <?php
 require_once '../app/core/init.php';
-if(!$username = Input::get('user')) {
+if(!$file = Input::get('file')) {
     Redirect::to('index.php');
 } else {
-    $user = new User($username);
-    if(!$user->exists()) {
+    $file = new File($id);
+    if(!$file->exists()) {
         Redirect::to('index.php');
     } else {
         $user = new User();
         $data = $user->data();
-        $files = new File();
+        $file = new File();
     }
 }
 ?>
@@ -37,7 +37,7 @@ if(!$username = Input::get('user')) {
                 // If user is not signed in, display the following HTML
                 include_once INC_ROOT . '/includes/layout/signed_out_nav.static.php';
             }
-            include_once INC_ROOT . '/includes/content/general/user_profile.php';
+            include_once INC_ROOT . '/includes/content/general/resource.php';
 	        include_once INC_ROOT . '/includes/layout/footer.php';
             ?>
 	    </div>

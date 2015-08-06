@@ -33,13 +33,14 @@ class File {
 		foreach ($files as $file) {
 			$fileList .= '
 				<tr onclick="showDesc' . $file['id'] . '()" class="file-item">
-					<td>' . $file['title'] . '</td>
+					<td><a href="#">' . $file['title'] . '</a></td>
+					<td>' . $file['author'] . '</td>
 					<td><a href="files/' . $file['category'] . '/' . $file['file'] . '">' . $file['file'] . '</a></td>
 					<td><a href="profile.php?user=' . $file['username'] . '">' . $file['username'] . '</a></td>
-					<td>' . $file['created_at'] . '</td>
+					<td>' . date('M d, Y', strtotime($file['created_at'])) . '</td>
 				</tr>
 				<tr id="desc' . $file['id'] . '" class="fileDescription tab-desc">
-					<td colspan="4">
+					<td colspan="5">
 						<div>
 							<h4>' . $file['title'] . '<sub class="pull-right"><a href="files/' . $file['category'] . '/' . $file['file'] . '" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Download</a></sub></h4>
 							<p>' . $file['description'] . '</p>
@@ -63,13 +64,14 @@ class File {
 		foreach ($files as $file) {
 			$userFiles .= '
 				<tr onclick="showDesc' . $file['id'] . '()" class="file-item">
-					<td>' . $file['title'] . '</td>
+					<td><a href="#">' . $file['title'] . '</a></td>
+					<td>' . $file['author'] . '</td>
 					<td><a href="files/' . $file['category'] . '/' . $file['file'] . '">' . $file['file'] . '</a></td>
-					<td><a href="profile.php?user=' . $file['username'] . '">' . $file['username'] . '</a></td>
-					<td>' . $file['created_at'] . '</td>
+					<td><a href="' . $file['category'] . '.php">' . ucfirst($file['category']) . '</a></td>
+					<td>' . date('M d, Y', strtotime($file['created_at'])) . '</td>
 				</tr>
 				<tr id="desc' . $file['id'] . '" class="fileDescription tab-desc">
-					<td colspan="4">
+					<td colspan="5">
 						<div>
 							<h4>' . $file['title'] . '<sub class="pull-right"><a href="files/' . $file['category'] . '/' . $file['file'] . '" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Download</a></sub></h4>
 							<p>' . $file['description'] . '</p>
@@ -84,7 +86,7 @@ class File {
 				</script>
 			';
 		};
-        print $userFiles;
+		print $userFiles;
 	}
 
 	public function pageInation($where) {

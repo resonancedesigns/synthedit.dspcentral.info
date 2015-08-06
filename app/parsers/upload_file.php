@@ -16,6 +16,7 @@ $allowed = [
 	'psd',
 	'pdf',
 	'txt',
+	'md',
 	'doc',
 	'docx',
 	'xls',

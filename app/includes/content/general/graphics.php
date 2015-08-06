@@ -127,9 +127,10 @@
                     <thead>
                         <tr>
                             <th>Title</th>
+                            <th>Original Author</th>
                             <th>File</th>
                             <th>Uploaded By</th>
-                            <th>Creation</th>
+                            <th>Creation Date</th>
                         </tr>
                         <tbody>
                             <?php $graphics->fileList('graphics', 'no', '0', '999999999999'); ?>
