@@ -1,5 +1,10 @@
 ### HEAD
 
+### 0.1.6 (August 12th, 2015)
+*   Added common license types to resource submission forms
+*   Created tagging function in 'File' class
+*   Applied tagging function to resource details in rousource views/pages
+
 ### 0.1.5 (August 5th, 2015)
 *   Modifications to the 'File' class to display author field and format date
 *   Minor copy edits to resource views/pages

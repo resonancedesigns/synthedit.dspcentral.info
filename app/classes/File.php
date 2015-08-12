@@ -27,10 +27,22 @@ class File {
 		return $files;
 	}
 
+	public function explodeTags($where, $pvt, $b1, $b2){
+		$files = $this->resourcesQueryConstructor($where, $pvt, $b1, $b2);
+		foreach ($files as $file) {	
+			$tags = explode(', ', $file['keywords']);
+			$tagList = NULL;
+			foreach ($tags as $tag) {
+				$tagList .= '<span class="label label-default">' . $tag . '</span> ';
+			}
+			return $tagList;
+		};
+	}
+
 	public function fileList($where, $pvt, $b1, $b2){
 		$files = $this->resourcesQueryConstructor($where, $pvt, $b1, $b2);
 		$fileList = NULL;
-		foreach ($files as $file) {
+		foreach ($files as $file) {	
 			$fileList .= '
 				<tr onclick="showDesc' . $file['id'] . '()" class="file-item">
 					<td><a href="#">' . $file['title'] . '</a></td>
@@ -44,6 +56,7 @@ class File {
 						<div>
 							<h4>' . $file['title'] . '<sub class="pull-right"><a href="files/' . $file['category'] . '/' . $file['file'] . '" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Download</a></sub></h4>
 							<p>' . $file['description'] . '</p>
+							<p>' . $this->explodeTags($where, $pvt, $b1, $b2) . '</p>
 							<hr>
 						</div>
 					</td>
@@ -75,6 +88,7 @@ class File {
 						<div>
 							<h4>' . $file['title'] . '<sub class="pull-right"><a href="files/' . $file['category'] . '/' . $file['file'] . '" class="btn btn-default"><span class="glyphicon glyphicon-save" aria-hidden="true"></span> Download</a></sub></h4>
 							<p>' . $file['description'] . '</p>
+							<p>' . $this->explodeTags($where, $pvt, $b1, $b2) . '</p>
 							<hr>
 						</div>
 					</td>
@@ -96,7 +110,6 @@ class File {
 		$files = $files->fetchAll(PDO::FETCH_ASSOC);
 		$total = $db->query("SELECT FOUND_ROWS() as total")->fetch()['total'];
 		$pages = ceil($total / $this->perP);
-		
 		$pageInation = NULL;
 		for ($x = 1; $x <= $pages; $x++) {
 			if($this->p === $x) { 

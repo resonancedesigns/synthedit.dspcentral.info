@@ -38,15 +38,21 @@
                             </div>
                         </div>
                         <div class="form-group field hide-me">
-                            <label for="license" class="col-sm-2 control-label">License</label>
+                            <label for="license" class="col-sm-2 control-label">License Type</label>
                             <div class="col-sm-10">
                                 <select name="license" id="license" class="form-control">
-                                    <option value="modules">Modules</option>
-                                    <option value="prefabs">Prefabs</option>
-                                    <option value="graphics">Graphics</option>
-                                    <option value="tools">Tools</option>
-                                    <option value="docs">Docs</option>
-                                    <option value="misc">Misc</option>
+                                    <option value="Proprietory EULA">Proprietory EULA</option>
+                                    <option value="Apache License 2.0">Apache License 2.0</option>
+                                    <option value="BSD 3-Clause 'New' or 'Revised'">BSD 3-Clause "New" or "Revised"</option>
+                                    <option value="BSD 2-Clause 'Simplified' or 'FreeBSD'">BSD 2-Clause "Simplified" or "FreeBSD" license</option>
+                                    <option value="GNU General Public License (GPL)">GNU General Public License (GPL)</option>
+                                    <option value="GNU Library or 'Lesser' General Public License (LGPL)">GNU Library or "Lesser" General Public License (LGPL)</option>
+                                    <option value="MIT License">MIT License</option>
+                                    <option value="Mozilla Public License 2.0">Mozilla Public License 2.0</option>
+                                    <option value="Common Development and Distribution License">Common Development and Distribution License</option>
+                                    <option value="Eclipse Public License">Eclipse Public License</option>
+                                    <option value="Other OSI-Approved License">Other OSI-Approved License</option>
+                                    <option value="None/Not Applicable">None/Not Applicable</option>
                                 </select>
                             </div>
                         </div>
