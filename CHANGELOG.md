@@ -4,6 +4,10 @@
 *   Added common license types to resource submission forms
 *   Created tagging function in 'File' class
 *   Applied tagging function to resource details in rousource views/pages
+*   Added Composer and Elasticsearch packages
+*   Added Composer autoloader to initialization file
+*   Loading Elasticsearch through initialization file
+*   Creating simple PHP search-engine of MySQL records
 
 ### 0.1.5 (August 5th, 2015)
 *   Modifications to the 'File' class to display author field and format date
