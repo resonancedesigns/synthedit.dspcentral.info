@@ -25,15 +25,19 @@ class Search {
 			OR keywords LIKE '%{$sanitized}%'
 		");
 		if(!$query->num_rows) {
-			return false;
+			$searchResults = array(
+				'count' => $query->num_rows,
+				'results' => 'There was nothing found matching your search terms.'
+			);
+		} else {
+			while($row = $query->fetch_object()) {
+				$rows[] = $row;
+			}
+			$searchResults = array(
+				'count' => $query->num_rows,
+				'results' => $rows
+			);
 		}
-		while($row = $query->fetch_object()) {
-			$rows[] = $row;
-		}
-		$searchResults = array(
-			'count' => $query->num_rows,
-			'results' => $rows
-		);
 		return $searchResults;
 	}
 }

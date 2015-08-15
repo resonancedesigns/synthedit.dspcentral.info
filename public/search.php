@@ -13,6 +13,8 @@ if(isset($_GET['s'])) {
 
 	// Send the search term to the Search class and store the result
 	$searchResults = $search->search($searchTerm);
+} else {
+	$searchEmpty = "You did not enter a search term.";
 }
 ?>
 <!doctype html>

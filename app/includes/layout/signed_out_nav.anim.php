@@ -40,9 +40,9 @@
             </ul>
             <form class="navbar-form navbar-left" role="search" action="search.php" method="get">
                 <div class="form-group">
-                    <input type="text" name="keywords" class="form-control" placeholder="Search">
+                    <input type="search" name="s" class="form-control" placeholder="Search Terms..." results="5" value="<?php echo $searchTerm; ?>">
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-default">Search</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="sign-in.php">Sign In</a></li>
