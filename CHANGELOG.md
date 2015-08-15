@@ -1,5 +1,10 @@
 ### HEAD
 
+### 0.1.7 (August 14th, 2015)
+*   Created "Search" class
+*   Created preliminary search views/pages
+    TODO: Refine view of search results to reflect same view found on resource views/pages.
+
 ### 0.1.6 (August 12th, 2015)
 *   Added common license types to resource submission forms
 *   Created tagging function in 'File' class
