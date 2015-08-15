@@ -1,19 +1,37 @@
 <?php
 require_once '../app/core/init.php';
-if(!$file = Input::get('file')) {
-    Redirect::to('index.php');
-} else {
-    $file = new File($id);
-    if(!$file->exists()) {
-        Redirect::to('index.php');
-    } else {
-        $user = new User();
-        $data = $user->data();
-        $file = new File();
-    }
+$user = new User();
+$data = $user->data();
+
+// Get a file item
+if(isset($_GET['f'])) {
+    $item = new File();
+    $fileID = $_GET['f'];
+    $fileDetails = $item->fileQueryConstructor($fileID);
+} 
+// Get a blog item
+elseif(isset($_GET['b'])) {
+    $item = new Blog();
+    $blogID = $_GET['b'];
+    $blogDetails = $item->blogQueryConstructor($blogID);
+} 
+// Get a creation item
+elseif(isset($_GET['c'])) {
+    $item = new Creation();
+    $creationID = $_GET['c'];
+    $creationDetails = $item->creationQueryConstructor($creationID);
+} 
+// Get nothing
+else {
+    echo "Nothing set";
 }
 ?>
-<html>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en">
     <head>
         <title>SynthEdit @ dspCentral</title>
         <?php include_once INC_ROOT . '/includes/content/meta/main.php' ?>
@@ -27,8 +45,8 @@ if(!$file = Input::get('file')) {
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-       	<div id="profile">
-       		<?php 
+        <div id="item">
+            <?php
             // User is logged in to the system
             if($user->isLoggedIn()) {        
                 // If user is signed in, display the following HTML -->
@@ -37,11 +55,11 @@ if(!$file = Input::get('file')) {
                 // If user is not signed in, display the following HTML
                 include_once INC_ROOT . '/includes/layout/signed_out_nav.static.php';
             }
-            include_once INC_ROOT . '/includes/content/general/resource.php';
-	        include_once INC_ROOT . '/includes/layout/footer.php';
+            include_once INC_ROOT . '/includes/content/general/item.php';
+            include_once INC_ROOT . '/includes/layout/footer.php';
             ?>
-	    </div>
+        </div>
         <!-- Load libraries -->
         <?php include_once INC_ROOT . '/includes/content/data/javascripts.php'; ?>
-	</body>
+    </body>
 </html>

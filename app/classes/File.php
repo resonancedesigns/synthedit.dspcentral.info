@@ -27,6 +27,14 @@ class File {
 		return $files;
 	}
 
+	public function fileQueryConstructor($fileID) {
+		$db = $this->connectApp();
+		$file = $db->prepare("SELECT * FROM files WHERE id = '{$fileID}'");
+		$file->execute();
+		$file = $file->fetchAll(PDO::FETCH_ASSOC);
+		return $file;
+	}
+
 	public function explodeTags($where, $pvt, $b1, $b2){
 		$files = $this->resourcesQueryConstructor($where, $pvt, $b1, $b2);
 		foreach ($files as $file) {	

@@ -4,6 +4,11 @@
 *   Created "Search" class
 *   Created preliminary search views/pages
     TODO: Refine view of search results to reflect same view found on resource views/pages.
+*   Added string output messages for instances of empty results and and no URL search parameter/GET request to "Search" functionality
+*   Updated search forms in navigation to use "search" input type in place of "text" input type.
+*   Added new function to "File" class for fetching details of a single file
+*   Created item views/pages for displaying the details of a single item (file, blog, vst, etc)
+*   Removed some depricated files
 
 ### 0.1.6 (August 12th, 2015)
 *   Added common license types to resource submission forms

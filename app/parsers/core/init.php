@@ -44,7 +44,7 @@ require_once INC_ROOT . '/functions/PHPMailerAutoload.php';
 require_once INC_ROOT . '/functions/sendmail.php';
 
 // Load composer packages
-require_once '../../vendor/autoload.php';
+require_once '../vendor/autoload.php';
 // Elasticsearch
 /*
 $es = new Elasticsearch\Client([
